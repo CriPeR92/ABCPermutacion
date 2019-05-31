@@ -10,6 +10,7 @@ public class FuentesComida {
     public ArrayList<String> caminos;
     public ArrayList<Integer> ids;
     public ArrayList<Integer> caminoUtilizado;
+    public ArrayList<Solicitud> solicitudes;
     public int fsUtilizados;
     public ArrayList<Integer> modificado;
 
@@ -20,6 +21,7 @@ public class FuentesComida {
         this.caminoUtilizado = new ArrayList<>();
         this.fsUtilizados = 0;
         this.modificado = new ArrayList<>();
+        this.solicitudes = new ArrayList<>();
     }
 
 }

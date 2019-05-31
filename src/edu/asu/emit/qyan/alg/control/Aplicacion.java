@@ -1,15 +1,15 @@
 package edu.asu.emit.qyan.alg.control;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
+
 import edu.asu.emit.qyan.alg.model.Path;
 import edu.asu.emit.qyan.alg.model.VariableGraph;
 
 public class Aplicacion {
 
 	public static ArrayList<FuentesComida> fuentes = new ArrayList<>();
+	public static ArrayList<Solicitud> solicitudes = new ArrayList<>();
 	public static VariableGraph graph = new VariableGraph("data/test_16");
 	public static ArrayList<Float> pi = new ArrayList<>();
 	public static ArrayList<String[]> caminos = new ArrayList<>();
@@ -21,6 +21,12 @@ public class Aplicacion {
 		leerArchivoCaminos();
 
 		crearFuenteDeComida(5);
+		boolean bandera = true;
+		for (int i = 0; i < fuentes.size(); i++) {
+            ordenarSolicitudes(i, bandera);
+            bandera = false;
+        }
+
 
 		for (int i=0; i< 10; i++) {
 			primerPaso(5);
@@ -74,8 +80,16 @@ public class Aplicacion {
 		writer.close();
 	}
 
+    /**
+     * Funcion para crear la lista de solicitudes para cada fuente de comida
+     * @param cantSolicitudes
+     */
+	public static void crearListadeSolicitudes(int cantSolicitudes) {
+
+    }
+
 	/**
-	 * Funcion para crear una fuente de comida
+	 * Funcion para crear una fuente de comida, y crear las solicitudes pero aun no se definio el orden
 	 */
 	public static void crearFuenteDeComida(int cantFuente) throws IOException {
 
@@ -118,46 +132,84 @@ public class Aplicacion {
 
 			int inicio = origen;
 			int fin = destino;
-			String listaCaminos = "";
 
-
-			for (int k = 0; k < caminos.size(); k++) {
-				if (caminos.get(k)[0].equals(str_list[0]) && caminos.get(k)[1].equals(str_list[1])) {
-					listaCaminos = caminos.get(k)[2];
-					break;
-				}
-			}
 
 			for (int j = 0; j < cantFuente; j++) {
-				BuscarSlot r = new BuscarSlot(fuentes.get(j).grafo, listaCaminos);
-				resultadoSlot res = r.concatenarCaminos(fs,0, 0);
+                Solicitud solicitud = new Solicitud(origen, destino, fs, tiempo, id);
+                fuentes.get(j).solicitudes.add(solicitud);
+            }
 
-
-				if (res !=null) {
-					//guardar caminos utilizados y el numero de camino utilizado
-					fuentes.get(j).caminoUtilizado.add(res.caminoUtilizado);
-					fuentes.get(j).caminos.add(res.camino);
-					fuentes.get(j).ids.add(id);
-					fuentes.get(j).modificado.add(0);
-					Asignacion asignar = new Asignacion(fuentes.get(j).grafo, res);
-					asignar.marcarSlotUtilizados(id);
-				}
-				else {
-                    /**
-                     * Si es que se bloqueo y no encontro un camino se guardara los datos de la conexion y la palabra bloqueado
-                     */
-                    fuentes.get(j).caminoUtilizado.add(99);
-                    fuentes.get(j).caminos.add("Bloqueado:" + str_list[0] + str_list[1] + str_list[2]);
-                    fuentes.get(j).ids.add(id);
-					fuentes.get(j).modificado.add(0);
-					System.out.println("No se encontró camino posible y se guarda la informacion de la conexion.");
-				}
-			}
 			linea = bufRead.readLine();
 		}
 		bufRead.close();
 
 	}
+
+    /**
+     * Funcion para ordenar las solicitudes y luego asignarlas al grafo
+     * @param fuenteDeComida
+     */
+	public static void ordenarSolicitudes(int fuenteDeComida, boolean fsFalso) {
+
+        if (fsFalso) {
+
+            Collections.sort(fuentes.get(fuenteDeComida).solicitudes, new Comparator<Solicitud>() {
+                public int compare(Solicitud p1, Solicitud p2) {
+                    return Double.compare(p1.getFSfalso(), p2.getFSfalso());
+                }
+            });
+            Collections.reverse(fuentes.get(fuenteDeComida).solicitudes);
+
+        } else {
+
+        }
+
+
+	    for (int i = 0; i < fuentes.get(fuenteDeComida).solicitudes.size(); i++) {
+
+	        Solicitud listaCaminos = fuentes.get(fuenteDeComida).solicitudes.get(i);
+
+        }
+
+
+
+//        String[] str_list = listaCaminos.trim().split("\\s*,\\s*");
+//
+//
+//        for (int k = 0; k < caminos.size(); k++) {
+//            if (caminos.get(k)[0].equals(str_list[0]) && caminos.get(k)[1].equals(str_list[1])) {
+//                listaCaminos = caminos.get(k)[2];
+//                break;
+//            }
+//        }
+
+//        for (int j = 0; j < cantFuente; j++) {
+//            BuscarSlot r = new BuscarSlot(fuentes.get(j).grafo, listaCaminos);
+//            resultadoSlot res = r.concatenarCaminos(fs,0, 0);
+
+
+//            if (res !=null) {
+//                //guardar caminos utilizados y el numero de camino utilizado
+//                fuentes.get(j).caminoUtilizado.add(res.caminoUtilizado);
+//                fuentes.get(j).caminos.add(res.camino);
+//                fuentes.get(j).ids.add(id);
+//                fuentes.get(j).modificado.add(0);
+//                Asignacion asignar = new Asignacion(fuentes.get(j).grafo, res);
+//                asignar.marcarSlotUtilizados(id);
+//            }
+//            else {
+//                /**
+//                 * Si es que se bloqueo y no encontro un camino se guardara los datos de la conexion y la palabra bloqueado
+//                 */
+//                fuentes.get(j).caminoUtilizado.add(99);
+//                fuentes.get(j).caminos.add("Bloqueado:" + str_list[0] + str_list[1] + str_list[2]);
+//                fuentes.get(j).ids.add(id);
+//                fuentes.get(j).modificado.add(0);
+//                System.out.println("No se encontró camino posible y se guarda la informacion de la conexion.");
+//            }
+//        }
+
+    }
 
 	/**
 	 * funcion para calcular los FS de todas las fuentes de comida
