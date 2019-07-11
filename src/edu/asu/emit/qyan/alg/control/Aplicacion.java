@@ -10,17 +10,18 @@ public class Aplicacion {
 
 	public static ArrayList<FuentesComida> fuentes = new ArrayList<>();
 	public static ArrayList<Solicitud> solicitudes = new ArrayList<>();
-	public static VariableGraph graph = new VariableGraph("data/test_16");
+	public static VariableGraph graph = new VariableGraph("data/test_25");
 	public static ArrayList<Float> pi = new ArrayList<>();
 	public static ArrayList<String[]> caminos = new ArrayList<>();
+	public static int abejas = 10;
 
 
 	public static void main(String[] args) throws InterruptedException, IOException {
 
-//		crearArchivoCaminos();
+		crearArchivoCaminos();
 		leerArchivoCaminos();
 
-		crearFuenteDeComida(5, true);
+		crearFuenteDeComida(abejas, true);
 		boolean bandera = true;
 
 		for (int i = 0; i < fuentes.size(); i++) {
@@ -29,11 +30,11 @@ public class Aplicacion {
         }
 
 
-		for (int i=0; i< 10; i++) {
-			primerPaso(5);
+		for (int i=0; i < 200; i++) {
+			primerPaso(abejas);
 			borrarGrafos();
-			segundoPaso(5);
-			tercerPaso(5);
+			segundoPaso(abejas);
+			tercerPaso(abejas);
 		}
 		elegirConexion();
 
@@ -61,7 +62,7 @@ public class Aplicacion {
 			variables[2] = variables[2].replace(", [", ";[");
 			variables[2] = variables[2].replace("[", "");
 			variables[2] = variables[2].replace("]", "");
-			variables[2] = variables[2].replace(", ", "");
+			variables[2] = variables[2].replace(", ", ",");
 			caminos.add(variables);
 			linea = bufRead.readLine();
 		}
@@ -76,8 +77,8 @@ public class Aplicacion {
 		PrintWriter writer = new PrintWriter("data/Kcaminos", "UTF-8");
 
 		// en este for hay que poner la cantidad de vertices que tenemos
-		for (int i = 0; i <= 5; i++) {
-			for (int k = 0; k <= 5; k++) {
+		for (int i = 0; i <= 24; i++) {
+			for (int k = 0; k <= 24; k++) {
 				if (i != k) {
 					List<Path> shortest_paths_list = yenAlg.get_shortest_paths(graph.get_vertex(i), graph.get_vertex(k), 4);
 					List<Path> shortest_paths_list2 = yenAlg.get_shortest_paths(graph.get_vertex(k), graph.get_vertex(i), 4);
@@ -106,22 +107,60 @@ public class Aplicacion {
 		//crear matriz inicial para todas las fuentes de comida
 		// Matriz que representa la red igual al archivo test_16 que se va a utilar al tener los caminos.
 		for (int i = 0; i<cantFuente ; i++) {
-			int[] vertices = {0, 1, 2, 3, 4, 5};
+			int[] vertices = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24};
 			GrafoMatriz g = new GrafoMatriz(vertices);
 			g.InicializarGrafo(g.grafo);
-			g.agregarRuta(0, 1, 1, 3, 5);
-			g.agregarRuta(1, 5, 1, 3, 5);
-			g.agregarRuta(1, 3, 1, 3, 5);
-			g.agregarRuta(1, 2, 1, 3, 5);
-			g.agregarRuta(2, 3, 1, 3, 5);
-			g.agregarRuta(2, 4, 1, 3, 5);
-			g.agregarRuta(3, 5, 1, 3, 5);
-			g.agregarRuta(4, 5, 1, 3, 5);
+
+			g.agregarRuta(0, 1, 1, 3, 30);
+			g.agregarRuta(2, 6, 1, 3, 30);
+			g.agregarRuta(2, 8, 1, 3, 30);
+			g.agregarRuta(2, 9, 1, 3, 30);
+			g.agregarRuta(4, 3, 1, 3, 30);
+			g.agregarRuta(5, 3, 1, 3, 30);
+			g.agregarRuta(5, 4, 1, 3, 30);
+			g.agregarRuta(5, 6, 1, 3, 30);
+			g.agregarRuta(5, 7, 1, 3, 30);
+			g.agregarRuta(7, 6, 1, 3, 30);
+			g.agregarRuta(7, 8, 1, 3, 30);
+			g.agregarRuta(9, 11, 1, 3, 30);
+			g.agregarRuta(10, 9, 1, 3, 30);
+			g.agregarRuta(10, 11, 1, 3, 30);
+			g.agregarRuta(12, 13, 1, 3, 30);
+			g.agregarRuta(14, 8, 1, 3, 30);
+			g.agregarRuta(14, 10, 1, 3, 30);
+			g.agregarRuta(14, 12, 1, 3, 30);
+			g.agregarRuta(14, 13, 1, 3, 30);
+			g.agregarRuta(14, 15, 1, 3, 30);
+			g.agregarRuta(14, 17, 1, 3, 30);
+			g.agregarRuta(14, 19, 1, 3, 30);
+			g.agregarRuta(14, 20, 1, 3, 30);
+			g.agregarRuta(14, 21, 1, 3, 30);
+			g.agregarRuta(14, 24, 1, 3, 30);
+			g.agregarRuta(15, 8, 1, 3, 30);
+			g.agregarRuta(15, 9, 1, 3, 30);
+			g.agregarRuta(15, 10, 1, 3, 30);
+			g.agregarRuta(15, 11, 1, 3, 30);
+			g.agregarRuta(16, 9, 1, 3, 30);
+			g.agregarRuta(16, 15, 1, 3, 30);
+			g.agregarRuta(17, 18, 1, 3, 30);
+			g.agregarRuta(19, 18, 1, 3, 30);
+			g.agregarRuta(19, 20, 1, 3, 30);
+			g.agregarRuta(19, 23, 1, 3, 30);
+			g.agregarRuta(21, 8, 1, 3, 30);
+			g.agregarRuta(21, 19, 1, 3, 30);
+			g.agregarRuta(21, 22, 1, 3, 30);
+			g.agregarRuta(21, 23, 1, 3, 30);
+			g.agregarRuta(23, 22, 1, 3, 30);
+			g.agregarRuta(24, 0, 1, 3, 30);
+			g.agregarRuta(24, 1, 1, 3, 30);
+			g.agregarRuta(24, 2, 1, 3, 30);
+			g.agregarRuta(24, 3, 1, 3, 30);
+			g.agregarRuta(24, 8, 1, 3, 30);
 
 			fuentes.add(new FuentesComida(g));
 		}
 
-		FileReader input = new FileReader("data/conexiones");
+		FileReader input = new FileReader("data/solicitudes");
 		BufferedReader bufRead = new BufferedReader(input);
 
 		String linea = bufRead.readLine();
@@ -134,9 +173,20 @@ public class Aplicacion {
 			}
 			String[] str_list = linea.trim().split("\\s*,\\s*");
 
+			/**
+			 * Calculo para la cantidad de fs
+			 */
+			int calAux = Integer.parseInt(str_list[2]);
+			double doubleAux = Integer.parseInt(str_list[2]);
+			doubleAux = Math.ceil(calAux/10);
+			calAux = (int) Math.ceil(doubleAux / 12);
+			/**
+			 *
+			 */
+
 			int origen = Integer.parseInt(str_list[0]);
 			int destino = Integer.parseInt(str_list[1]);
-			int fs = Integer.parseInt(str_list[2]);
+			int fs = calAux;
 			int tiempo = Integer.parseInt(str_list[3]);
 			int id = Integer.parseInt(str_list[4]);
 
@@ -326,17 +376,55 @@ public class Aplicacion {
 
 	private static boolean crearNuevoGrafo(int j, int k, int nroGrafo) {
 
-		int[] vertices = {0, 1, 2, 3, 4, 5};
+		int[] vertices = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24};
 		GrafoMatriz g = new GrafoMatriz(vertices);
 		g.InicializarGrafo(g.grafo);
-		g.agregarRuta(0, 1, 1, 3, 5);
-		g.agregarRuta(1, 5, 1, 3, 5);
-		g.agregarRuta(1, 3, 1, 3, 5);
-		g.agregarRuta(1, 2, 1, 3, 5);
-		g.agregarRuta(2, 3, 1, 3, 5);
-		g.agregarRuta(2, 4, 1, 3, 5);
-		g.agregarRuta(3, 5, 1, 3, 5);
-		g.agregarRuta(4, 5, 1, 3, 5);
+
+		g.agregarRuta(0, 1, 1, 3, 30);
+		g.agregarRuta(2, 6, 1, 3, 30);
+		g.agregarRuta(2, 8, 1, 3, 30);
+		g.agregarRuta(2, 9, 1, 3, 30);
+		g.agregarRuta(4, 3, 1, 3, 30);
+		g.agregarRuta(5, 3, 1, 3, 30);
+		g.agregarRuta(5, 4, 1, 3, 30);
+		g.agregarRuta(5, 6, 1, 3, 30);
+		g.agregarRuta(5, 7, 1, 3, 30);
+		g.agregarRuta(7, 6, 1, 3, 30);
+		g.agregarRuta(7, 8, 1, 3, 30);
+		g.agregarRuta(9, 11, 1, 3, 30);
+		g.agregarRuta(10, 9, 1, 3, 30);
+		g.agregarRuta(10, 11, 1, 3, 30);
+		g.agregarRuta(12, 13, 1, 3, 30);
+		g.agregarRuta(14, 8, 1, 3, 30);
+		g.agregarRuta(14, 10, 1, 3, 30);
+		g.agregarRuta(14, 12, 1, 3, 30);
+		g.agregarRuta(14, 13, 1, 3, 30);
+		g.agregarRuta(14, 15, 1, 3, 30);
+		g.agregarRuta(14, 17, 1, 3, 30);
+		g.agregarRuta(14, 19, 1, 3, 30);
+		g.agregarRuta(14, 20, 1, 3, 30);
+		g.agregarRuta(14, 21, 1, 3, 30);
+		g.agregarRuta(14, 24, 1, 3, 30);
+		g.agregarRuta(15, 8, 1, 3, 30);
+		g.agregarRuta(15, 9, 1, 3, 30);
+		g.agregarRuta(15, 10, 1, 3, 30);
+		g.agregarRuta(15, 11, 1, 3, 30);
+		g.agregarRuta(16, 9, 1, 3, 30);
+		g.agregarRuta(16, 15, 1, 3, 30);
+		g.agregarRuta(17, 18, 1, 3, 30);
+		g.agregarRuta(19, 18, 1, 3, 30);
+		g.agregarRuta(19, 20, 1, 3, 30);
+		g.agregarRuta(19, 23, 1, 3, 30);
+		g.agregarRuta(21, 8, 1, 3, 30);
+		g.agregarRuta(21, 19, 1, 3, 30);
+		g.agregarRuta(21, 22, 1, 3, 30);
+		g.agregarRuta(21, 23, 1, 3, 30);
+		g.agregarRuta(23, 22, 1, 3, 30);
+		g.agregarRuta(24, 0, 1, 3, 30);
+		g.agregarRuta(24, 1, 1, 3, 30);
+		g.agregarRuta(24, 2, 1, 3, 30);
+		g.agregarRuta(24, 3, 1, 3, 30);
+		g.agregarRuta(24, 8, 1, 3, 30);
 
 		fuentes.add(new FuentesComida(g));
 

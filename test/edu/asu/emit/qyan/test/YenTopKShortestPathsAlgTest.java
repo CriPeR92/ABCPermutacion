@@ -50,7 +50,7 @@ public class YenTopKShortestPathsAlgTest extends TestCase
 	{
 		System.out.println("Testing Yen's algorithm for top-k shortest paths!");
 		//VariableGraph graph = new VariableGraph("data/network");
-		VariableGraph graph = new VariableGraph("data/test_16");
+		VariableGraph graph = new VariableGraph("data/test_25");
 		DijkstraShortestPathAlg alg = new DijkstraShortestPathAlg(graph);
 		//System.out.println(alg.get_shortest_path(graph.get_vertex(0), graph.get_vertex(20)));
 		System.out.println(alg.get_shortest_path(graph.get_vertex(0), graph.get_vertex(2)));
