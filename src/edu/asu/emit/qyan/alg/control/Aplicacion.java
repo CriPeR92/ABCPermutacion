@@ -30,7 +30,7 @@ public class Aplicacion {
         }
 
 
-		for (int i=0; i < 200; i++) {
+		for (int i=0; i < 100; i++) {
 			primerPaso(abejas);
 			borrarGrafos();
 			segundoPaso(abejas);
@@ -111,51 +111,51 @@ public class Aplicacion {
 			GrafoMatriz g = new GrafoMatriz(vertices);
 			g.InicializarGrafo(g.grafo);
 
-			g.agregarRuta(0, 1, 1, 3, 30);
-			g.agregarRuta(2, 6, 1, 3, 30);
-			g.agregarRuta(2, 8, 1, 3, 30);
-			g.agregarRuta(2, 9, 1, 3, 30);
-			g.agregarRuta(4, 3, 1, 3, 30);
-			g.agregarRuta(5, 3, 1, 3, 30);
-			g.agregarRuta(5, 4, 1, 3, 30);
-			g.agregarRuta(5, 6, 1, 3, 30);
-			g.agregarRuta(5, 7, 1, 3, 30);
-			g.agregarRuta(7, 6, 1, 3, 30);
-			g.agregarRuta(7, 8, 1, 3, 30);
-			g.agregarRuta(9, 11, 1, 3, 30);
-			g.agregarRuta(10, 9, 1, 3, 30);
-			g.agregarRuta(10, 11, 1, 3, 30);
-			g.agregarRuta(12, 13, 1, 3, 30);
-			g.agregarRuta(14, 8, 1, 3, 30);
-			g.agregarRuta(14, 10, 1, 3, 30);
-			g.agregarRuta(14, 12, 1, 3, 30);
-			g.agregarRuta(14, 13, 1, 3, 30);
-			g.agregarRuta(14, 15, 1, 3, 30);
-			g.agregarRuta(14, 17, 1, 3, 30);
-			g.agregarRuta(14, 19, 1, 3, 30);
-			g.agregarRuta(14, 20, 1, 3, 30);
-			g.agregarRuta(14, 21, 1, 3, 30);
-			g.agregarRuta(14, 24, 1, 3, 30);
-			g.agregarRuta(15, 8, 1, 3, 30);
-			g.agregarRuta(15, 9, 1, 3, 30);
-			g.agregarRuta(15, 10, 1, 3, 30);
-			g.agregarRuta(15, 11, 1, 3, 30);
-			g.agregarRuta(16, 9, 1, 3, 30);
-			g.agregarRuta(16, 15, 1, 3, 30);
-			g.agregarRuta(17, 18, 1, 3, 30);
-			g.agregarRuta(19, 18, 1, 3, 30);
-			g.agregarRuta(19, 20, 1, 3, 30);
-			g.agregarRuta(19, 23, 1, 3, 30);
-			g.agregarRuta(21, 8, 1, 3, 30);
-			g.agregarRuta(21, 19, 1, 3, 30);
-			g.agregarRuta(21, 22, 1, 3, 30);
-			g.agregarRuta(21, 23, 1, 3, 30);
-			g.agregarRuta(23, 22, 1, 3, 30);
-			g.agregarRuta(24, 0, 1, 3, 30);
-			g.agregarRuta(24, 1, 1, 3, 30);
-			g.agregarRuta(24, 2, 1, 3, 30);
-			g.agregarRuta(24, 3, 1, 3, 30);
-			g.agregarRuta(24, 8, 1, 3, 30);
+			g.agregarRuta(0, 1, 1, 3, 60);
+			g.agregarRuta(2, 6, 1, 3, 60);
+			g.agregarRuta(2, 8, 1, 3, 60);
+			g.agregarRuta(2, 9, 1, 3, 60);
+			g.agregarRuta(4, 3, 1, 3, 60);
+			g.agregarRuta(5, 3, 1, 3, 60);
+			g.agregarRuta(5, 4, 1, 3, 60);
+			g.agregarRuta(5, 6, 1, 3, 60);
+			g.agregarRuta(5, 7, 1, 3, 60);
+			g.agregarRuta(7, 6, 1, 3, 60);
+			g.agregarRuta(7, 8, 1, 3, 60);
+			g.agregarRuta(9, 11, 1, 3, 60);
+			g.agregarRuta(10, 9, 1, 3, 60);
+			g.agregarRuta(10, 11, 1, 3, 60);
+			g.agregarRuta(12, 13, 1, 3, 60);
+			g.agregarRuta(14, 8, 1, 3, 60);
+			g.agregarRuta(14, 10, 1, 3, 60);
+			g.agregarRuta(14, 12, 1, 3, 60);
+			g.agregarRuta(14, 13, 1, 3, 60);
+			g.agregarRuta(14, 15, 1, 3, 60);
+			g.agregarRuta(14, 17, 1, 3, 60);
+			g.agregarRuta(14, 19, 1, 3, 60);
+			g.agregarRuta(14, 20, 1, 3, 60);
+			g.agregarRuta(14, 21, 1, 3, 60);
+			g.agregarRuta(14, 24, 1, 3, 60);
+			g.agregarRuta(15, 8, 1, 3, 60);
+			g.agregarRuta(15, 9, 1, 3, 60);
+			g.agregarRuta(15, 10, 1, 3, 60);
+			g.agregarRuta(15, 11, 1, 3, 60);
+			g.agregarRuta(16, 9, 1, 3, 60);
+			g.agregarRuta(16, 15, 1, 3, 60);
+			g.agregarRuta(17, 18, 1, 3, 60);
+			g.agregarRuta(19, 18, 1, 3, 60);
+			g.agregarRuta(19, 20, 1, 3, 60);
+			g.agregarRuta(19, 23, 1, 3, 60);
+			g.agregarRuta(21, 8, 1, 3, 60);
+			g.agregarRuta(21, 19, 1, 3, 60);
+			g.agregarRuta(21, 22, 1, 3, 60);
+			g.agregarRuta(21, 23, 1, 3, 60);
+			g.agregarRuta(23, 22, 1, 3, 60);
+			g.agregarRuta(24, 0, 1, 3, 60);
+			g.agregarRuta(24, 1, 1, 3, 60);
+			g.agregarRuta(24, 2, 1, 3, 60);
+			g.agregarRuta(24, 3, 1, 3, 60);
+			g.agregarRuta(24, 8, 1, 3, 60);
 
 			fuentes.add(new FuentesComida(g));
 		}
@@ -273,7 +273,7 @@ public class Aplicacion {
                 fuentes.get(fuenteDeComida).caminoUtilizado.add(99);
                 fuentes.get(fuenteDeComida).caminos.add("Bloqueado:" + listaCaminosPrimera.origen + listaCaminosPrimera.destino +listaCaminosPrimera.FS);
                 fuentes.get(fuenteDeComida).ids.add(listaCaminosPrimera.id);
-                System.out.println("No se encontró camino posible y se guarda la informacion de la conexion.");
+                //System.out.println("No se encontró camino posible y se guarda la informacion de la conexion.");
             }
 
 
@@ -380,51 +380,51 @@ public class Aplicacion {
 		GrafoMatriz g = new GrafoMatriz(vertices);
 		g.InicializarGrafo(g.grafo);
 
-		g.agregarRuta(0, 1, 1, 3, 30);
-		g.agregarRuta(2, 6, 1, 3, 30);
-		g.agregarRuta(2, 8, 1, 3, 30);
-		g.agregarRuta(2, 9, 1, 3, 30);
-		g.agregarRuta(4, 3, 1, 3, 30);
-		g.agregarRuta(5, 3, 1, 3, 30);
-		g.agregarRuta(5, 4, 1, 3, 30);
-		g.agregarRuta(5, 6, 1, 3, 30);
-		g.agregarRuta(5, 7, 1, 3, 30);
-		g.agregarRuta(7, 6, 1, 3, 30);
-		g.agregarRuta(7, 8, 1, 3, 30);
-		g.agregarRuta(9, 11, 1, 3, 30);
-		g.agregarRuta(10, 9, 1, 3, 30);
-		g.agregarRuta(10, 11, 1, 3, 30);
-		g.agregarRuta(12, 13, 1, 3, 30);
-		g.agregarRuta(14, 8, 1, 3, 30);
-		g.agregarRuta(14, 10, 1, 3, 30);
-		g.agregarRuta(14, 12, 1, 3, 30);
-		g.agregarRuta(14, 13, 1, 3, 30);
-		g.agregarRuta(14, 15, 1, 3, 30);
-		g.agregarRuta(14, 17, 1, 3, 30);
-		g.agregarRuta(14, 19, 1, 3, 30);
-		g.agregarRuta(14, 20, 1, 3, 30);
-		g.agregarRuta(14, 21, 1, 3, 30);
-		g.agregarRuta(14, 24, 1, 3, 30);
-		g.agregarRuta(15, 8, 1, 3, 30);
-		g.agregarRuta(15, 9, 1, 3, 30);
-		g.agregarRuta(15, 10, 1, 3, 30);
-		g.agregarRuta(15, 11, 1, 3, 30);
-		g.agregarRuta(16, 9, 1, 3, 30);
-		g.agregarRuta(16, 15, 1, 3, 30);
-		g.agregarRuta(17, 18, 1, 3, 30);
-		g.agregarRuta(19, 18, 1, 3, 30);
-		g.agregarRuta(19, 20, 1, 3, 30);
-		g.agregarRuta(19, 23, 1, 3, 30);
-		g.agregarRuta(21, 8, 1, 3, 30);
-		g.agregarRuta(21, 19, 1, 3, 30);
-		g.agregarRuta(21, 22, 1, 3, 30);
-		g.agregarRuta(21, 23, 1, 3, 30);
-		g.agregarRuta(23, 22, 1, 3, 30);
-		g.agregarRuta(24, 0, 1, 3, 30);
-		g.agregarRuta(24, 1, 1, 3, 30);
-		g.agregarRuta(24, 2, 1, 3, 30);
-		g.agregarRuta(24, 3, 1, 3, 30);
-		g.agregarRuta(24, 8, 1, 3, 30);
+		g.agregarRuta(0, 1, 1, 3, 60);
+		g.agregarRuta(2, 6, 1, 3, 60);
+		g.agregarRuta(2, 8, 1, 3, 60);
+		g.agregarRuta(2, 9, 1, 3, 60);
+		g.agregarRuta(4, 3, 1, 3, 60);
+		g.agregarRuta(5, 3, 1, 3, 60);
+		g.agregarRuta(5, 4, 1, 3, 60);
+		g.agregarRuta(5, 6, 1, 3, 60);
+		g.agregarRuta(5, 7, 1, 3, 60);
+		g.agregarRuta(7, 6, 1, 3, 60);
+		g.agregarRuta(7, 8, 1, 3, 60);
+		g.agregarRuta(9, 11, 1, 3, 60);
+		g.agregarRuta(10, 9, 1, 3, 60);
+		g.agregarRuta(10, 11, 1, 3, 60);
+		g.agregarRuta(12, 13, 1, 3, 60);
+		g.agregarRuta(14, 8, 1, 3, 60);
+		g.agregarRuta(14, 10, 1, 3, 60);
+		g.agregarRuta(14, 12, 1, 3, 60);
+		g.agregarRuta(14, 13, 1, 3, 60);
+		g.agregarRuta(14, 15, 1, 3, 60);
+		g.agregarRuta(14, 17, 1, 3, 60);
+		g.agregarRuta(14, 19, 1, 3, 60);
+		g.agregarRuta(14, 20, 1, 3, 60);
+		g.agregarRuta(14, 21, 1, 3, 60);
+		g.agregarRuta(14, 24, 1, 3, 60);
+		g.agregarRuta(15, 8, 1, 3, 60);
+		g.agregarRuta(15, 9, 1, 3, 60);
+		g.agregarRuta(15, 10, 1, 3, 60);
+		g.agregarRuta(15, 11, 1, 3, 60);
+		g.agregarRuta(16, 9, 1, 3, 60);
+		g.agregarRuta(16, 15, 1, 3, 60);
+		g.agregarRuta(17, 18, 1, 3, 60);
+		g.agregarRuta(19, 18, 1, 3, 60);
+		g.agregarRuta(19, 20, 1, 3, 60);
+		g.agregarRuta(19, 23, 1, 3, 60);
+		g.agregarRuta(21, 8, 1, 3, 60);
+		g.agregarRuta(21, 19, 1, 3, 60);
+		g.agregarRuta(21, 22, 1, 3, 60);
+		g.agregarRuta(21, 23, 1, 3, 60);
+		g.agregarRuta(23, 22, 1, 3, 60);
+		g.agregarRuta(24, 0, 1, 3, 60);
+		g.agregarRuta(24, 1, 1, 3, 60);
+		g.agregarRuta(24, 2, 1, 3, 60);
+		g.agregarRuta(24, 3, 1, 3, 60);
+		g.agregarRuta(24, 8, 1, 3, 60);
 
 		fuentes.add(new FuentesComida(g));
 
@@ -479,7 +479,7 @@ public class Aplicacion {
 				fuentes.get(fuentes.size()-1).caminoUtilizado.add(99);
 				fuentes.get(fuentes.size()-1).caminos.add("Bloqueado:" + listaCaminosPrimera.origen + listaCaminosPrimera.destino + listaCaminosPrimera.FS);
 				fuentes.get(fuentes.size()-1).ids.add(listaCaminosPrimera.id);
-				System.out.println("No se encontró camino posible y se guarda la informacion de la conexion.");
+				//System.out.println("No se encontró camino posible y se guarda la informacion de la conexion.");
 			}
 
 		}
@@ -640,7 +640,9 @@ public class Aplicacion {
 			}
 		}
 
-		System.out.println("El mejor resultado tiene el indice mayor utilizado en: " + resultadoFinal.fsUtilizados + " y una cantidad de conexiones bloqueadas igual a: " + cantBloqueados);
+		float indice = (float)resultadoFinal.fsUtilizados/60;
+
+		System.out.println("Funcion objetivo: " + indice + " Conexiones bloqueadas: " + cantBloqueados);
 
 	}
 

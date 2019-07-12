@@ -1,0 +1,53 @@
+ABC Permutacion
+Con 10 fuentes de comida
+
+- 50 iteraciones
+- 150 solicitudes
+
+Funcion objetivo:   Conexiones bloqueadas: 14
+Funcion objetivo: 0.98333335 Conexiones bloqueadas: 12
+Funcion objetivo: 0.98333335 Conexiones bloqueadas: 14
+Funcion objetivo: 0.98333335 Conexiones bloqueadas: 16
+Funcion objetivo: 0.98333335 Conexiones bloqueadas: 14
+Funcion objetivo: 0.98333335 Conexiones bloqueadas: 14
+Funcion objetivo: 0.98333335 Conexiones bloqueadas: 12
+Funcion objetivo: 0.98333335 Conexiones bloqueadas: 18
+Funcion objetivo: 0.98333335 Conexiones bloqueadas: 12
+Funcion objetivo: 0.98333335 Conexiones bloqueadas: 16
+Funcion objetivo: 0.98333335 Conexiones bloqueadas: 18
+Funcion objetivo: 0.96666664 Conexiones bloqueadas: 16
+Funcion objetivo: 0.98333335 Conexiones bloqueadas: 16
+Funcion objetivo: 0.96666664 Conexiones bloqueadas: 14
+Funcion objetivo: 0.98333335 Conexiones bloqueadas: 14
+Funcion objetivo: 0.98333335 Conexiones bloqueadas: 12
+Funcion objetivo: 0.98333335 Conexiones bloqueadas: 14
+Funcion objetivo: 0.98333335 Conexiones bloqueadas: 16
+Funcion objetivo: 0.98333335 Conexiones bloqueadas: 16
+Funcion objetivo: 0.98333335 Conexiones bloqueadas: 16
+Funcion objetivo: 0.98333335 Conexiones bloqueadas: 18
+Funcion objetivo: 0.98333335 Conexiones bloqueadas: 12
+Funcion objetivo: 0.98333335 Conexiones bloqueadas: 16
+Funcion objetivo: 0.98333335 Conexiones bloqueadas: 16
+Funcion objetivo: 0.98333335 Conexiones bloqueadas: 14
+Funcion objetivo: 0.98333335 Conexiones bloqueadas: 16
+Funcion objetivo: 0.98333335 Conexiones bloqueadas: 12
+Funcion objetivo: 0.98333335 Conexiones bloqueadas: 16
+Funcion objetivo: 0.98333335 Conexiones bloqueadas: 12
+Funcion objetivo: 0.98333335 Conexiones bloqueadas: 16
+
+
+- 100 iteraciones
+- 150 solicitudes
+
+Funcion objetivo: 0.96666664 Conexiones bloqueadas: 16
+Funcion objetivo: 0.96666664 Conexiones bloqueadas: 16
+Funcion objetivo: 0.96666664 Conexiones bloqueadas: 18
+Funcion objetivo: 0.98333335 Conexiones bloqueadas: 16
+Funcion objetivo: 0.98333335 Conexiones bloqueadas: 8
+Funcion objetivo: 0.98333335 Conexiones bloqueadas: 12
+Funcion objetivo: 0.98333335 Conexiones bloqueadas: 14
+Funcion objetivo: 0.98333335 Conexiones bloqueadas: 16
+Funcion objetivo: 0.98333335 Conexiones bloqueadas: 14
+Funcion objetivo: 0.98333335 Conexiones bloqueadas: 12
+Funcion objetivo: 0.98333335 Conexiones bloqueadas: 12
+Funcion objetivo: 0.96666664 Conexiones bloqueadas: 16

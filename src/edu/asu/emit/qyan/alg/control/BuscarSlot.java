@@ -73,7 +73,7 @@ public class BuscarSlot {
 			String[] caminos;
 			caminos = cam.split(":");
 			cam = caminos[0];
-			System.out.println(cam);
+			//System.out.println(cam);
 			respuesta.camino = cam;
 
 			String[] caminosLista;
