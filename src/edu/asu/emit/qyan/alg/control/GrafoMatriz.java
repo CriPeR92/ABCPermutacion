@@ -42,7 +42,7 @@ public class GrafoMatriz {
 
 		for (int x=0; x < grafo.length; x++) {
 			for (int y=0; y < grafo[x].length; y++) {
-				grafo[x][y] = new Enlace(0,0,0,60);
+				grafo[x][y] = new Enlace(0,0,0,200);
 
 				for (int k=0; k < grafo[x][y].listafs.length; k++) {
 
