@@ -2,23 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c3879f2f-7a88-4d06-a12e-f5e6386bd08b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/edu/asu/emit/qyan/alg/control/Aplicacion$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/edu/asu/emit/qyan/alg/control/Aplicacion$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/edu/asu/emit/qyan/alg/control/Aplicacion$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/edu/asu/emit/qyan/alg/control/Aplicacion$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/edu/asu/emit/qyan/alg/control/Aplicacion.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/edu/asu/emit/qyan/alg/control/Aplicacion.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/edu/asu/emit/qyan/alg/control/Asignacion.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/edu/asu/emit/qyan/alg/control/Asignacion.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/edu/asu/emit/qyan/alg/control/BuscarSlot.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/edu/asu/emit/qyan/alg/control/BuscarSlot.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/edu/asu/emit/qyan/alg/control/DijkstraShortestPathAlg.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/edu/asu/emit/qyan/alg/control/DijkstraShortestPathAlg.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/edu/asu/emit/qyan/alg/control/Enlace.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/edu/asu/emit/qyan/alg/control/Enlace.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/edu/asu/emit/qyan/alg/control/FrecuenciaSlot.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/edu/asu/emit/qyan/alg/control/FrecuenciaSlot.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/edu/asu/emit/qyan/alg/control/GrafoMatriz.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/edu/asu/emit/qyan/alg/control/GrafoMatriz.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/edu/asu/emit/qyan/alg/control/YenTopKShortestPathsAlg.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/edu/asu/emit/qyan/alg/control/YenTopKShortestPathsAlg.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/edu/asu/emit/qyan/alg/model/Graph.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/edu/asu/emit/qyan/alg/model/Graph.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/edu/asu/emit/qyan/alg/model/Pair.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/edu/asu/emit/qyan/alg/model/Pair.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/edu/asu/emit/qyan/alg/model/VariableGraph.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/edu/asu/emit/qyan/alg/model/VariableGraph.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/Kcaminos" beforeDir="false" afterPath="$PROJECT_DIR$/data/Kcaminos" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/solicitudes" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/test_25" beforeDir="false" afterPath="$PROJECT_DIR$/data/test_25" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/control/Aplicacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/control/Aplicacion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/control/Asignacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/control/Asignacion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/control/BuscarSlot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/control/BuscarSlot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/control/Enlace.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/control/Enlace.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/control/FrecuenciaSlot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/control/FrecuenciaSlot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/control/GrafoMatriz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/control/GrafoMatriz.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -43,48 +36,6 @@
         <option value="Class" />
       </list>
     </option>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>caminoutilizado.add</find>
-      <find>.remove</find>
-      <find>Kcaminos</find>
-      <find>caminos</find>
-      <find>char</find>
-      <find>listaCaminos</find>
-      <find>modificado.add</find>
-      <find>caminoUtilizado.remove</find>
-      <find>caminoUtilizado.add</find>
-      <find>caminoUtilizado</find>
-      <find>caminoUtilizado.add(</find>
-      <find>concatenarCaminos</find>
-      <find>FuentesComida</find>
-      <find>99</find>
-      <find>modificado</find>
-      <find>test_16</find>
-      <find>bloqueado</find>
-      <find>30</find>
-      <find>system.out</find>
-      <find>,4,</find>
-      <find>0-4</find>
-      <find>60</find>
-      <find>pi</find>
-      <find>pi.add</find>
-      <find>segundoPaso</find>
-      <find>100</find>
-      <find>300</find>
-      <find>200</find>
-      <find>150</find>
-      <find>180</find>
-    </findStrings>
-    <replaceStrings>
-      <replace>60</replace>
-      <replace>100</replace>
-      <replace>300</replace>
-      <replace>150</replace>
-      <replace>180</replace>
-      <replace>200</replace>
-    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -145,15 +96,6 @@
     </task>
     <servers />
   </component>
-  <component name="TodoView" selected-index="2">
-    <todo-panel id="selected-file">
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="true" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-  </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
@@ -172,12 +114,12 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/control/Aplicacion.java</url>
-          <line>40</line>
+          <line>41</line>
           <option name="timeStamp" value="79" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/control/Aplicacion.java</url>
-          <line>36</line>
+          <line>37</line>
           <option name="timeStamp" value="80" />
         </line-breakpoint>
       </breakpoints>

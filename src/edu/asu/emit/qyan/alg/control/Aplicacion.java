@@ -24,6 +24,7 @@ public class Aplicacion {
 			leerArchivoCaminos();
 
 			crearFuenteDeComida(abejas, true);
+			leerArchivoSolicitudes(abejas, true);
 			boolean bandera = true;
 
 			for (int i = 0; i < fuentes.size(); i++) {
@@ -100,13 +101,59 @@ public class Aplicacion {
 		writer.close();
 	}
 
-    /**
-     * Funcion para crear la lista de solicitudes para cada fuente de comida
-     * @param cantSolicitudes
-     */
-	public static void crearListadeSolicitudes(int cantSolicitudes) {
+	public static void leerArchivoSolicitudes(int cantFuente, boolean parametro) throws IOException {
 
-    }
+		String numero = "";
+
+		for (int l = 0; l < 6; l++) {
+
+			numero = Integer.toString(l);
+			FileReader input = new FileReader("data/solicitudes" + numero);
+			BufferedReader bufRead = new BufferedReader(input);
+			String linea = bufRead.readLine();
+
+			while (linea != null) {
+
+				if (linea.trim().equals("")) {
+					linea = bufRead.readLine();
+					continue;
+				}
+				String[] str_list = linea.trim().split("\\s*,\\s*");
+
+				/**
+				 * Calculo para la cantidad de fs
+				 */
+				int calAux = Integer.parseInt(str_list[2]);
+				double doubleAux = Integer.parseInt(str_list[2]);
+				doubleAux = Math.ceil(calAux / 10);
+				calAux = (int) Math.ceil(doubleAux / 12);
+
+				int origen = Integer.parseInt(str_list[0]);
+				int destino = Integer.parseInt(str_list[1]);
+				int fs = calAux;
+				int tiempo = Integer.parseInt(str_list[3]);
+				int id = Integer.parseInt(str_list[4]);
+
+				int inicio = origen;
+				int fin = destino;
+
+				if (parametro) {
+					for (int j = 0; j < cantFuente; j++) {
+						Solicitud solicitud = new Solicitud(origen, destino, fs, tiempo, id);
+						fuentes.get(j).solicitudes.add(solicitud);
+					}
+				} else {
+					Solicitud solicitud = new Solicitud(origen, destino, fs, tiempo, id);
+					fuentes.get(fuentes.size() - 1).solicitudes.add(solicitud);
+				}
+				linea = bufRead.readLine();
+			}
+			bufRead.close();
+			for (int k = 0; k < cantFuente; k++) {
+				fuentes.get(k).grafo.restar();
+			}
+		}
+	}
 
 	/**
 	 * Funcion para crear una fuente de comida, y crear las solicitudes pero aun no se definio el orden
@@ -211,56 +258,6 @@ public class Aplicacion {
 
 			fuentes.add(new FuentesComida(g));
 		}
-
-		FileReader input = new FileReader("data/solicitudes");
-		BufferedReader bufRead = new BufferedReader(input);
-
-		String linea = bufRead.readLine();
-
-		while (linea != null ) {
-
-			if (linea.trim().equals("")) {
-				linea = bufRead.readLine();
-				continue;
-			}
-			String[] str_list = linea.trim().split("\\s*,\\s*");
-
-			/**
-			 * Calculo para la cantidad de fs
-			 */
-			int calAux = Integer.parseInt(str_list[2]);
-			double doubleAux = Integer.parseInt(str_list[2]);
-			doubleAux = Math.ceil(calAux/10);
-			calAux = (int) Math.ceil(doubleAux / 12);
-			/**
-			 *
-			 */
-
-			int origen = Integer.parseInt(str_list[0]);
-			int destino = Integer.parseInt(str_list[1]);
-			int fs = calAux;
-			int tiempo = Integer.parseInt(str_list[3]);
-			int id = Integer.parseInt(str_list[4]);
-
-			int inicio = origen;
-			int fin = destino;
-
-			if (parametro) {
-				for (int j = 0; j < cantFuente; j++) {
-					Solicitud solicitud = new Solicitud(origen, destino, fs, tiempo, id);
-					fuentes.get(j).solicitudes.add(solicitud);
-				}
-			} else {
-				Solicitud solicitud = new Solicitud(origen, destino, fs, tiempo, id);
-				fuentes.get(fuentes.size()-1).solicitudes.add(solicitud);
-			}
-
-
-
-			linea = bufRead.readLine();
-		}
-		bufRead.close();
-
 	}
 
     /**
@@ -296,39 +293,40 @@ public class Aplicacion {
 
 	    for (int i = 0; i < fuentes.get(fuenteDeComida).solicitudes.size(); i++) {
 
-	        Solicitud listaCaminosPrimera = fuentes.get(fuenteDeComida).solicitudes.get(i);
-	        String listaCaminos = null;
+			Solicitud listaCaminosPrimera = fuentes.get(fuenteDeComida).solicitudes.get(i);
+			String listaCaminos = null;
 
-			for (int k = 0; k < caminos.size(); k++) {
-				if (caminos.get(k)[0].equals(String.valueOf(listaCaminosPrimera.origen)) && caminos.get(k)[1].equals(String.valueOf(listaCaminosPrimera.destino))) {
-					listaCaminos = caminos.get(k)[2];
-					break;
+			if (fuentes.get(fuenteDeComida).ids.contains(listaCaminosPrimera.id)) {
+
+				fuentes.get(fuenteDeComida).grafo.verificar_conexion(listaCaminosPrimera.origen, listaCaminosPrimera.id, listaCaminosPrimera.FS);
+
+			} else {
+
+				for (int k = 0; k < caminos.size(); k++) {
+					if (caminos.get(k)[0].equals(String.valueOf(listaCaminosPrimera.origen)) && caminos.get(k)[1].equals(String.valueOf(listaCaminosPrimera.destino))) {
+						listaCaminos = caminos.get(k)[2];
+						break;
+					}
 				}
-        	}
+				BuscarSlot r = new BuscarSlot(fuentes.get(fuenteDeComida).grafo, listaCaminos);
+				resultadoSlot res = r.concatenarCaminos(listaCaminosPrimera.FS, 0, 0);
 
-            BuscarSlot r = new BuscarSlot(fuentes.get(fuenteDeComida).grafo, listaCaminos);
-            resultadoSlot res = r.concatenarCaminos(listaCaminosPrimera.FS,0, 0);
-
-
-            if (res !=null) {
-                //guardar caminos utilizados y el numero de camino utilizado
-                fuentes.get(fuenteDeComida).caminoUtilizado.add(res.caminoUtilizado);
-                fuentes.get(fuenteDeComida).caminos.add(res.camino);
-                fuentes.get(fuenteDeComida).ids.add(listaCaminosPrimera.id);
-                Asignacion asignar = new Asignacion(fuentes.get(fuenteDeComida).grafo, res);
-                asignar.marcarSlotUtilizados(listaCaminosPrimera.id);
-            }
-            else {
-                /**
-                 * Si es que se bloqueo y no encontro un camino se guardara los datos de la conexion y la palabra bloqueado
-                 */
-                fuentes.get(fuenteDeComida).caminoUtilizado.add(99);
-                fuentes.get(fuenteDeComida).caminos.add("Bloqueado:" + listaCaminosPrimera.origen + listaCaminosPrimera.destino +listaCaminosPrimera.FS);
-                fuentes.get(fuenteDeComida).ids.add(listaCaminosPrimera.id);
-                //System.out.println("No se encontró camino posible y se guarda la informacion de la conexion.");
-            }
-
-
+				if (res != null) {
+					//guardar caminos utilizados y el numero de camino utilizado
+					fuentes.get(fuenteDeComida).caminoUtilizado.add(res.caminoUtilizado);
+					fuentes.get(fuenteDeComida).caminos.add(res.camino);
+					fuentes.get(fuenteDeComida).ids.add(listaCaminosPrimera.id);
+					Asignacion asignar = new Asignacion(fuentes.get(fuenteDeComida).grafo, res);
+					asignar.marcarSlotUtilizados(listaCaminosPrimera.id);
+				} else {
+					/**
+					 * Si es que se bloqueo y no encontro un camino se guardara los datos de la conexion y la palabra bloqueado
+					 */
+					fuentes.get(fuenteDeComida).caminoUtilizado.add(99);
+					fuentes.get(fuenteDeComida).caminos.add("Bloqueado:" + listaCaminosPrimera.origen + listaCaminosPrimera.destino + listaCaminosPrimera.FS);
+					fuentes.get(fuenteDeComida).ids.add(listaCaminosPrimera.id);
+				}
+			}
         }
 
     }

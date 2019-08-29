@@ -1,7 +1,5 @@
 package edu.asu.emit.qyan.alg.control;
 
-import edu.asu.emit.qyan.alg.model.abstracts.BaseVertex;
-
 public class Asignacion {
 
     GrafoMatriz g;
@@ -17,11 +15,21 @@ public class Asignacion {
 
 
 
-    public void marcarSlotUtilizados(int id) {
+    public void marcarSlotUtilizados(Integer id) {
 
         int mitad = lugarInicialAsignacion(resultado);
         String[] caminosLista;
+        String camino = resultado.camino.toString();
         caminosLista = resultado.camino.split(",");
+        String nuevo_camino;
+        int p1;
+        //vamos a guardar el camino formateado
+        p1 = camino.indexOf("]");
+        System.out.println(p1);
+        nuevo_camino = camino.substring(1,p1);
+        nuevo_camino = nuevo_camino.replaceAll("\\s", "");
+        System.out.println("Se imprime el resultado");
+        System.out.println(id.toString()+","+nuevo_camino);
 
         for (int i = 0; i < caminosLista.length - 1; i++) {
 
@@ -37,6 +45,7 @@ public class Asignacion {
 
             int mitadderecha = mitad;
             int mitadizquierda = mitad;
+            int contador=0;
             for (int x = 0; x < resultado.cantidadfs; x++) {
 
                 if (x == 0) {
@@ -44,29 +53,35 @@ public class Asignacion {
                     g.grafo[n2][n1].listafs[mitad].libreOcupado = 1;
                     g.grafo[n1][n2].listafs[mitad].id = id;
                     g.grafo[n2][n1].listafs[mitad].id = id;
+                    g.grafo[n1][n2].listafs[mitad].tiempo = g.grafo[n1][n2].tiempo;
+                    g.grafo[n2][n1].listafs[mitad].tiempo = g.grafo[n2][n1].tiempo;
+                    if(contador == 0) {
+                        //concatenar y guardar el id de la conexion
+                        g.grafo[n1][n2].enlace.add(id.toString() + ","+ nuevo_camino);
+                        g.grafo[n1][n2].ids.add(id);
+                        contador=1;
+                    }
 
                 } else if (x != 0 && (x % 2) == 0) {
+
                     mitadizquierda--;
                     g.grafo[n1][n2].listafs[mitadizquierda].libreOcupado = 1;
                     g.grafo[n2][n1].listafs[mitadizquierda].libreOcupado = 1;
                     g.grafo[n1][n2].listafs[mitadizquierda].id = id;
                     g.grafo[n2][n1].listafs[mitadizquierda].id = id;
+                    g.grafo[n1][n2].listafs[mitadizquierda].tiempo = g.grafo[n1][n2].tiempo;
+                    g.grafo[n2][n1].listafs[mitadizquierda].tiempo = g.grafo[n2][n1].tiempo;
+
                 } else if (x != 0 && (x % 2) != 0) {
                     mitadderecha++;
                     g.grafo[n1][n2].listafs[mitadderecha].libreOcupado = 1;
                     g.grafo[n2][n1].listafs[mitadderecha].libreOcupado = 1;
                     g.grafo[n1][n2].listafs[mitadderecha].id = id;
                     g.grafo[n2][n1].listafs[mitadderecha].id = id;
-
+                    g.grafo[n1][n2].listafs[mitadderecha].tiempo = g.grafo[n1][n2].tiempo;
+                    g.grafo[n2][n1].listafs[mitadderecha].tiempo = g.grafo[n2][n1].tiempo;
                 }
             }
-
-            for (int x = 0; x < g.grafo[0][0].listafs.length; x++) {
-
-
-                //System.out.println(g.grafo[p][m].listafs[x].libreOcupado);
-            }
-            //System.out.println("######");
         }
 
 

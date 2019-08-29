@@ -39,8 +39,6 @@ public class BuscarSlot {
 		procesadoCaminos();
 		int res = 0;
 		
-		etiquetadesalida: {
-		
 		for (int a = 0; a < listaCaminos.length; a++) {
 
 			for (int i = 0; i < respuesta.vectorAsignacion.length; i++) {
@@ -112,29 +110,32 @@ public class BuscarSlot {
 					boolean ban = false;
 					
 					if (respuesta.vectorAsignacion[i] == 0) {
-						
 						contadorActual++;
 						indiceActual = i;
 						ban = true;
 					}
-					
-					if (contadorActual >= fs ) {
+
+					if (contadorActual >= fs && contadorActual > contadorFinal) {
+
 						indiceFinal = indiceActual;
 						contadorFinal = contadorActual;
-						respuesta.indice = indiceFinal;
-					    respuesta.contador = contadorFinal;
-					    respuesta.cantidadfs = fs;
-					    res = contadorFinal;
-						break etiquetadesalida;
 					}
 
 					if (!ban) {
 						contadorActual=0;
 					}
 				}
-				
+
+			if (contadorFinal >= fs) {
+				respuesta.indice = indiceFinal;
+				respuesta.contador = contadorFinal;
+				respuesta.cantidadfs = fs;
+				res = contadorFinal;
+				break;
+			}
+
 		}
-		}
+
 		
 		if (res >= fs) {
 			return respuesta;
