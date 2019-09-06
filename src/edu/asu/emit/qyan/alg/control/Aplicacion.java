@@ -409,6 +409,7 @@ public class Aplicacion {
 
 	private static boolean crearNuevoGrafo(int j, int k, int nroGrafo) {
 
+		int contador = 0;
 		int[] vertices = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24};
 		GrafoMatriz g = new GrafoMatriz(vertices);
 		g.InicializarGrafo(g.grafo);
@@ -489,32 +490,39 @@ public class Aplicacion {
 			Solicitud listaCaminosPrimera = fuentes.get(fuentes.size() - 1).solicitudes.get(p);
 			String listaCaminos = null;
 
-			for (int l = 0; l < caminos.size(); l++) {
-				if (caminos.get(l)[0].equals(String.valueOf(listaCaminosPrimera.origen)) && caminos.get(l)[1].equals(String.valueOf(listaCaminosPrimera.destino))) {
-					listaCaminos = caminos.get(l)[2];
-					break;
-				}
-			}
-
-			BuscarSlot r = new BuscarSlot(fuentes.get(fuentes.size()-1).grafo, listaCaminos);
-			resultadoSlot res = r.concatenarCaminos(listaCaminosPrimera.FS, 0, 0);
-
-
-			if (res != null) {
-				//guardar caminos utilizados y el numero de camino utilizado
-				fuentes.get(fuentes.size()-1).caminoUtilizado.add(res.caminoUtilizado);
-				fuentes.get(fuentes.size()-1).caminos.add(res.camino);
-				fuentes.get(fuentes.size()-1).ids.add(listaCaminosPrimera.id);
-				Asignacion asignar = new Asignacion(fuentes.get(fuentes.size()-1).grafo, res);
-				asignar.marcarSlotUtilizados(listaCaminosPrimera.id);
+			if (fuentes.get(fuentes.size()-1).ids.contains(listaCaminosPrimera.id)) {
+				System.out.println("entro una solicitud repetida");
+				contador++;
+				fuentes.get(fuentes.size()-1).grafo.verificar_conexion(listaCaminosPrimera.origen, listaCaminosPrimera.id, listaCaminosPrimera.FS);
 			} else {
-				/**
-				 * Si es que se bloqueo y no encontro un camino se guardara los datos de la conexion y la palabra bloqueado
-				 */
-				fuentes.get(fuentes.size()-1).caminoUtilizado.add(99);
-				fuentes.get(fuentes.size()-1).caminos.add("Bloqueado:" + listaCaminosPrimera.origen + listaCaminosPrimera.destino + listaCaminosPrimera.FS);
-				fuentes.get(fuentes.size()-1).ids.add(listaCaminosPrimera.id);
-				//System.out.println("No se encontró camino posible y se guarda la informacion de la conexion.");
+
+				for (int l = 0; l < caminos.size(); l++) {
+					if (caminos.get(l)[0].equals(String.valueOf(listaCaminosPrimera.origen)) && caminos.get(l)[1].equals(String.valueOf(listaCaminosPrimera.destino))) {
+						listaCaminos = caminos.get(l)[2];
+						break;
+					}
+				}
+
+				BuscarSlot r = new BuscarSlot(fuentes.get(fuentes.size() - 1).grafo, listaCaminos);
+				resultadoSlot res = r.concatenarCaminos(listaCaminosPrimera.FS, 0, 0);
+
+
+				if (res != null) {
+					//guardar caminos utilizados y el numero de camino utilizado
+					fuentes.get(fuentes.size() - 1).caminoUtilizado.add(res.caminoUtilizado);
+					fuentes.get(fuentes.size() - 1).caminos.add(res.camino);
+					fuentes.get(fuentes.size() - 1).ids.add(listaCaminosPrimera.id);
+					Asignacion asignar = new Asignacion(fuentes.get(fuentes.size() - 1).grafo, res);
+					asignar.marcarSlotUtilizados(listaCaminosPrimera.id);
+				} else {
+					/**
+					 * Si es que se bloqueo y no encontro un camino se guardara los datos de la conexion y la palabra bloqueado
+					 */
+					fuentes.get(fuentes.size() - 1).caminoUtilizado.add(99);
+					fuentes.get(fuentes.size() - 1).caminos.add("Bloqueado:" + listaCaminosPrimera.origen + listaCaminosPrimera.destino + listaCaminosPrimera.FS);
+					fuentes.get(fuentes.size() - 1).ids.add(listaCaminosPrimera.id);
+					//System.out.println("No se encontró camino posible y se guarda la informacion de la conexion.");
+				}
 			}
 
 		}
@@ -523,7 +531,7 @@ public class Aplicacion {
 		fuentes.get(fuentes.size()-1).fsUtilizados = pi;
 		int bloqueadosViejo = 0;
 		int bloqueadosNuevo = 0;
-		for (int m = 0; m < fuentes.get(nroGrafo).solicitudesArchivos.size(); m++) {
+		for (int m = 0; m < fuentes.get(nroGrafo).solicitudesArchivos.size() - contador; m++) {
 			System.out.println(fuentes.get(nroGrafo).caminos.size());
 			if (fuentes.get(nroGrafo).caminos.get(m).contains("Bloqueado")) {
 				bloqueadosViejo++;
