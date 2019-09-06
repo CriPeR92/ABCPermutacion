@@ -25,11 +25,12 @@ public class Asignacion {
         int p1;
         //vamos a guardar el camino formateado
         p1 = camino.indexOf("]");
-        System.out.println(p1);
-        nuevo_camino = camino.substring(1,p1);
+//        System.out.println(p1);
+//        System.out.println(camino);
+        nuevo_camino = camino;
         nuevo_camino = nuevo_camino.replaceAll("\\s", "");
-        System.out.println("Se imprime el resultado");
-        System.out.println(id.toString()+","+nuevo_camino);
+//        System.out.println("Se imprime el resultado");
+//        System.out.println(id.toString()+","+nuevo_camino);
 
         for (int i = 0; i < caminosLista.length - 1; i++) {
 

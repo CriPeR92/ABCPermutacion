@@ -3,15 +3,24 @@
   <component name="ChangeListManager">
     <list default="true" id="c3879f2f-7a88-4d06-a12e-f5e6386bd08b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/edu/asu/emit/qyan/alg/control/Enlace.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/edu/asu/emit/qyan/alg/control/Enlace.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/edu/asu/emit/qyan/alg/control/FrecuenciaSlot.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/edu/asu/emit/qyan/alg/control/FrecuenciaSlot.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/edu/asu/emit/qyan/alg/control/Aplicacion$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/edu/asu/emit/qyan/alg/control/Aplicacion$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/edu/asu/emit/qyan/alg/control/Aplicacion$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/edu/asu/emit/qyan/alg/control/Aplicacion$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/edu/asu/emit/qyan/alg/control/Aplicacion.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/edu/asu/emit/qyan/alg/control/Aplicacion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/edu/asu/emit/qyan/alg/control/Asignacion.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/edu/asu/emit/qyan/alg/control/Asignacion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/edu/asu/emit/qyan/alg/control/BuscarSlot.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/edu/asu/emit/qyan/alg/control/BuscarSlot.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/edu/asu/emit/qyan/alg/control/FuentesComida.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/edu/asu/emit/qyan/alg/control/FuentesComida.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/edu/asu/emit/qyan/alg/control/GrafoMatriz.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/edu/asu/emit/qyan/alg/control/GrafoMatriz.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/Kcaminos" beforeDir="false" afterPath="$PROJECT_DIR$/data/Kcaminos" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/solicitudes1" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/solicitudes2" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/solicitudes3" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/solicitudes4" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/solicitudes5" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/solicitudes6" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes6" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/test_25" beforeDir="false" afterPath="$PROJECT_DIR$/data/test_25" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/control/Aplicacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/control/Aplicacion.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/control/Asignacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/control/Asignacion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/control/BuscarSlot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/control/BuscarSlot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/control/Enlace.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/control/Enlace.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/control/FrecuenciaSlot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/control/FrecuenciaSlot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/control/GrafoMatriz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/control/GrafoMatriz.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/control/FuentesComida.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/control/FuentesComida.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -114,42 +123,31 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/control/Aplicacion.java</url>
-          <line>41</line>
+          <line>62</line>
           <option name="timeStamp" value="79" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/control/Aplicacion.java</url>
-          <line>37</line>
-          <option name="timeStamp" value="80" />
+          <line>390</line>
+          <option name="timeStamp" value="143" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/control/Aplicacion.java</url>
+          <line>28</line>
+          <option name="timeStamp" value="152" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/control/Aplicacion.java</url>
+          <line>526</line>
+          <option name="timeStamp" value="154" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
-  </component>
-  <component name="debuggerHistoryManager">
-    <expressions id="watch">
-      <expression>
-        <expression-string>fuentes.get(i).modificado.get(p)</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-    </expressions>
-    <expressions id="evaluateExpression">
-      <expression>
-        <expression-string>fuentes.get(i).caminoUtilizado.get(j)</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>caminos.get(k)[0]</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>caminoFinal.length()</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-    </expressions>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="((java.util.ArrayList)((FuentesComida)((ArrayList)Aplicacion.fuentes).get(0)).solicitudesArchivos).get(100)" custom="edu.asu.emit.qyan.alg.control.FuentesComida,java.util.ArrayList" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="masterDetails">
     <states>
