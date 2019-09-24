@@ -18,7 +18,7 @@ public class Aplicacion {
 
 	public static void main(String[] args) throws InterruptedException, IOException {
 
-		crearArchivoCaminos();
+//		crearArchivoCaminos();
 		leerArchivoCaminos();
 		crearFuenteDeComida(abejas, true);
 		for (int l = 1; l <= 6; l++) {
@@ -36,11 +36,11 @@ public class Aplicacion {
 			int k;
 			for (k = 0; k < abejas; k++) {
 				for (int b = 0; b < fuentes.get(k).solicitudes.size(); b++) {
-					fuentes.get(k).solicitudesArchivos.add(fuentes.get(k).solicitudes.get(k));
+					fuentes.get(k).solicitudesArchivos.add(fuentes.get(k).solicitudes.get(b));
 				}
 			}
 
-			for (int i = 0; i < 1; i++) {
+			for (int i = 0; i < 5; i++) {
 				primerPaso(abejas);
 				borrarGrafos();
 				segundoPaso(abejas);
@@ -51,14 +51,11 @@ public class Aplicacion {
 			for (k = 0; k < abejas; k++) {
 				fuentes.get(k).solicitudes.clear();
 			}
-			System.out.println(l);
 
 			for (k=0; k < abejas; k++) {
 				fuentes.get(k).grafo.restar();
 			}
-//			for (int k = 0; k < abejas; k++) {
-//				fuentes.get(k).grafo.restar();
-//			}
+
 		}
 			elegirConexion();
 //		long endTime   = System.nanoTime();
@@ -130,7 +127,7 @@ public class Aplicacion {
 				fuentes.get(fuentes.size() - 1).solicitudesArchivos.add(solicitudes.get(h));
 			}
 		} else {
-			String numero = "";
+			String numero;
 			numero = Integer.toString(l);
 			FileReader input = new FileReader("data/solicitudes" + numero);
 			BufferedReader bufRead = new BufferedReader(input);
@@ -278,38 +275,31 @@ public class Aplicacion {
 			Solicitud listaCaminosPrimera = fuentes.get(fuenteDeComida).solicitudes.get(i);
 			String listaCaminos = null;
 
-			if (fuentes.get(fuenteDeComida).ids.contains(listaCaminosPrimera.id)) {
-				//0.995 la cantidad de bloqueados es: 6
-				System.out.println("entro una solicitud repetida");
-				fuentes.get(fuenteDeComida).grafo.verificar_conexion(listaCaminosPrimera.origen, listaCaminosPrimera.id, listaCaminosPrimera.FS);
-
-			} else {
-
-				for (int k = 0; k < caminos.size(); k++) {
-					if (caminos.get(k)[0].equals(String.valueOf(listaCaminosPrimera.origen)) && caminos.get(k)[1].equals(String.valueOf(listaCaminosPrimera.destino))) {
-						listaCaminos = caminos.get(k)[2];
-						break;
-					}
-				}
-				BuscarSlot r = new BuscarSlot(fuentes.get(fuenteDeComida).grafo, listaCaminos);
-				resultadoSlot res = r.concatenarCaminos(listaCaminosPrimera.FS, 0, 0);
-
-				if (res != null) {
-					//guardar caminos utilizados y el numero de camino utilizado
-					fuentes.get(fuenteDeComida).caminoUtilizado.add(res.caminoUtilizado);
-					fuentes.get(fuenteDeComida).caminos.add(res.camino);
-					fuentes.get(fuenteDeComida).ids.add(listaCaminosPrimera.id);
-					Asignacion asignar = new Asignacion(fuentes.get(fuenteDeComida).grafo, res);
-					asignar.marcarSlotUtilizados(listaCaminosPrimera.id);
-				} else {
-					/**
-					 * Si es que se bloqueo y no encontro un camino se guardara los datos de la conexion y la palabra bloqueado
-					 */
-					fuentes.get(fuenteDeComida).caminoUtilizado.add(99);
-					fuentes.get(fuenteDeComida).caminos.add("Bloqueado:" + listaCaminosPrimera.origen + listaCaminosPrimera.destino + listaCaminosPrimera.FS);
-					fuentes.get(fuenteDeComida).ids.add(listaCaminosPrimera.id);
+			for (int k = 0; k < caminos.size(); k++) {
+				if (caminos.get(k)[0].equals(String.valueOf(listaCaminosPrimera.origen)) && caminos.get(k)[1].equals(String.valueOf(listaCaminosPrimera.destino))) {
+					listaCaminos = caminos.get(k)[2];
+					break;
 				}
 			}
+			BuscarSlot r = new BuscarSlot(fuentes.get(fuenteDeComida).grafo, listaCaminos);
+			resultadoSlot res = r.concatenarCaminos(listaCaminosPrimera.FS, 5, 0);
+
+			if (res != null) {
+				//guardar caminos utilizados y el numero de camino utilizado
+				fuentes.get(fuenteDeComida).caminoUtilizado.add(res.caminoUtilizado);
+				fuentes.get(fuenteDeComida).caminos.add(res.camino);
+				fuentes.get(fuenteDeComida).ids.add(listaCaminosPrimera.id);
+				Asignacion asignar = new Asignacion(fuentes.get(fuenteDeComida).grafo, res);
+				asignar.marcarSlotUtilizados(listaCaminosPrimera.id);
+			} else {
+				/**
+				 * Si es que se bloqueo y no encontro un camino se guardara los datos de la conexion y la palabra bloqueado
+				 */
+				fuentes.get(fuenteDeComida).caminoUtilizado.add(99);
+				fuentes.get(fuenteDeComida).caminos.add("Bloqueado:" + listaCaminosPrimera.origen + listaCaminosPrimera.destino + listaCaminosPrimera.FS);
+				fuentes.get(fuenteDeComida).ids.add(listaCaminosPrimera.id);
+			}
+
         }
 
     }
@@ -384,11 +374,11 @@ public class Aplicacion {
 		for (int i = 0; i < cantFuentes; i++) {
 			int contador = 0;
 			Random rand = new Random();
-			int j = rand.nextInt(fuentes.get(i).solicitudesArchivos.size());
-			int k = rand.nextInt(fuentes.get(i).solicitudesArchivos.size());
+			int j = rand.nextInt(fuentes.get(i).solicitudes.size());
+			int k = rand.nextInt(fuentes.get(i).solicitudes.size());
 
 			while (j == k) {
-				k = rand.nextInt(fuentes.get(i).solicitudesArchivos.size());
+				k = rand.nextInt(fuentes.get(i).solicitudes.size());
 			}
 			while (contador < 3) {
 
@@ -462,7 +452,9 @@ public class Aplicacion {
 
 		fuentes.add(new FuentesComida(g));
 
-		Solicitud auxiliar = new Solicitud(fuentes.get(nroGrafo).solicitudesArchivos.get(k).origen, fuentes.get(nroGrafo).solicitudesArchivos.get(k).destino, fuentes.get(nroGrafo).solicitudesArchivos.get(k).FS, fuentes.get(nroGrafo).solicitudesArchivos.get(k).tiempo, fuentes.get(nroGrafo).solicitudesArchivos.get(k).id);
+		copiarGrafo(nroGrafo);
+
+		Solicitud auxiliar = new Solicitud(fuentes.get(nroGrafo).solicitudes.get(k).origen, fuentes.get(nroGrafo).solicitudes.get(k).destino, fuentes.get(nroGrafo).solicitudes.get(k).FS, fuentes.get(nroGrafo).solicitudes.get(k).tiempo, fuentes.get(nroGrafo).solicitudes.get(k).id);
 
 		for (int i = 0; i < fuentes.get(nroGrafo).solicitudesArchivos.size(); i++) {
 			Solicitud solicitud = new Solicitud(fuentes.get(nroGrafo).solicitudesArchivos.get(i).origen, fuentes.get(nroGrafo).solicitudesArchivos.get(i).destino, fuentes.get(nroGrafo).solicitudesArchivos.get(i).FS, fuentes.get(nroGrafo).solicitudesArchivos.get(i).tiempo, fuentes.get(nroGrafo).solicitudesArchivos.get(i).id);
@@ -490,41 +482,33 @@ public class Aplicacion {
 			Solicitud listaCaminosPrimera = fuentes.get(fuentes.size() - 1).solicitudes.get(p);
 			String listaCaminos = null;
 
-			if (fuentes.get(fuentes.size()-1).ids.contains(listaCaminosPrimera.id)) {
-				System.out.println("entro una solicitud repetida");
-				contador++;
-				fuentes.get(fuentes.size()-1).grafo.verificar_conexion(listaCaminosPrimera.origen, listaCaminosPrimera.id, listaCaminosPrimera.FS);
-			} else {
-
-				for (int l = 0; l < caminos.size(); l++) {
-					if (caminos.get(l)[0].equals(String.valueOf(listaCaminosPrimera.origen)) && caminos.get(l)[1].equals(String.valueOf(listaCaminosPrimera.destino))) {
-						listaCaminos = caminos.get(l)[2];
-						break;
-					}
-				}
-
-				BuscarSlot r = new BuscarSlot(fuentes.get(fuentes.size() - 1).grafo, listaCaminos);
-				resultadoSlot res = r.concatenarCaminos(listaCaminosPrimera.FS, 0, 0);
-
-
-				if (res != null) {
-					//guardar caminos utilizados y el numero de camino utilizado
-					fuentes.get(fuentes.size() - 1).caminoUtilizado.add(res.caminoUtilizado);
-					fuentes.get(fuentes.size() - 1).caminos.add(res.camino);
-					fuentes.get(fuentes.size() - 1).ids.add(listaCaminosPrimera.id);
-					Asignacion asignar = new Asignacion(fuentes.get(fuentes.size() - 1).grafo, res);
-					asignar.marcarSlotUtilizados(listaCaminosPrimera.id);
-				} else {
-					/**
-					 * Si es que se bloqueo y no encontro un camino se guardara los datos de la conexion y la palabra bloqueado
-					 */
-					fuentes.get(fuentes.size() - 1).caminoUtilizado.add(99);
-					fuentes.get(fuentes.size() - 1).caminos.add("Bloqueado:" + listaCaminosPrimera.origen + listaCaminosPrimera.destino + listaCaminosPrimera.FS);
-					fuentes.get(fuentes.size() - 1).ids.add(listaCaminosPrimera.id);
-					//System.out.println("No se encontró camino posible y se guarda la informacion de la conexion.");
+			for (int l = 0; l < caminos.size(); l++) {
+				if (caminos.get(l)[0].equals(String.valueOf(listaCaminosPrimera.origen)) && caminos.get(l)[1].equals(String.valueOf(listaCaminosPrimera.destino))) {
+					listaCaminos = caminos.get(l)[2];
+					break;
 				}
 			}
 
+			BuscarSlot r = new BuscarSlot(fuentes.get(fuentes.size() - 1).grafo, listaCaminos);
+			resultadoSlot res = r.concatenarCaminos(listaCaminosPrimera.FS, 5, 0);
+
+
+			if (res != null) {
+				//guardar caminos utilizados y el numero de camino utilizado
+				fuentes.get(fuentes.size() - 1).caminoUtilizado.add(res.caminoUtilizado);
+				fuentes.get(fuentes.size() - 1).caminos.add(res.camino);
+				fuentes.get(fuentes.size() - 1).ids.add(listaCaminosPrimera.id);
+				Asignacion asignar = new Asignacion(fuentes.get(fuentes.size() - 1).grafo, res);
+				asignar.marcarSlotUtilizados(listaCaminosPrimera.id);
+			} else {
+				/**
+				 * Si es que se bloqueo y no encontro un camino se guardara los datos de la conexion y la palabra bloqueado
+				 */
+				fuentes.get(fuentes.size() - 1).caminoUtilizado.add(99);
+				fuentes.get(fuentes.size() - 1).caminos.add("Bloqueado:" + listaCaminosPrimera.origen + listaCaminosPrimera.destino + listaCaminosPrimera.FS);
+				fuentes.get(fuentes.size() - 1).ids.add(listaCaminosPrimera.id);
+				//System.out.println("No se encontró camino posible y se guarda la informacion de la conexion.");
+			}
 		}
 
 		int pi = calcularFsUno(fuentes.size()-1);
@@ -532,7 +516,6 @@ public class Aplicacion {
 		int bloqueadosViejo = 0;
 		int bloqueadosNuevo = 0;
 		for (int m = 0; m < fuentes.get(nroGrafo).solicitudesArchivos.size() - contador; m++) {
-			System.out.println(fuentes.get(nroGrafo).caminos.size());
 			if (fuentes.get(nroGrafo).caminos.get(m).contains("Bloqueado")) {
 				bloqueadosViejo++;
 			}
@@ -556,6 +539,50 @@ public class Aplicacion {
 
 	}
 
+	/**
+	 * Funcion para copiar un grafo a otro nuevo
+	 */
+
+	public static void copiarGrafo(int nroGrafo) {
+
+		int i, j, k;
+
+		for (i = 0; i < fuentes.get(nroGrafo).caminos.size(); i++) {
+		    fuentes.get(fuentes.size()-1).caminos.add(fuentes.get(nroGrafo).caminos.get(i));
+            fuentes.get(fuentes.size()-1).ids.add(fuentes.get(nroGrafo).ids.get(i));
+            fuentes.get(fuentes.size()-1).caminoUtilizado.add(fuentes.get(nroGrafo).caminoUtilizado.get(i));
+        }
+
+        fuentes.get(fuentes.size()-1).fsUtilizados = fuentes.get(nroGrafo).fsUtilizados;
+        fuentes.get(fuentes.size()-1).modificado = fuentes.get(nroGrafo).modificado;
+        fuentes.get(fuentes.size()-1).borrar = fuentes.get(nroGrafo).borrar;
+
+
+		for (i = 0; i < fuentes.get(nroGrafo).grafo.grafo.length; i++) {
+
+			for (j = 0; j < fuentes.get(nroGrafo).grafo.grafo.length; j++) {
+
+				if (fuentes.get(nroGrafo).grafo.grafo[i][j].distancia != 0) {
+
+					fuentes.get(nroGrafo).grafo.grafo[i][j].distancia = fuentes.get(fuentes.size()-1).grafo.grafo[i][j].distancia;
+					fuentes.get(nroGrafo).grafo.grafo[i][j].tiempo = fuentes.get(fuentes.size()-1).grafo.grafo[i][j].tiempo;
+					fuentes.get(nroGrafo).grafo.grafo[i][j].cantfs = fuentes.get(fuentes.size()-1).grafo.grafo[i][j].cantfs;
+
+					for (int l = 0; l < fuentes.get(nroGrafo).grafo.grafo[i][j].enlace.size(); l++) {
+						fuentes.get(fuentes.size()-1).grafo.grafo[i][j].enlace.add(fuentes.get(nroGrafo).grafo.grafo[i][j].enlace.get(l));
+						fuentes.get(fuentes.size()-1).grafo.grafo[i][j].ids.add(fuentes.get(nroGrafo).grafo.grafo[i][j].ids.get(l));
+					}
+
+					for (k = 0; k < fuentes.get(nroGrafo).grafo.grafo[i][j].listafs.length; k++) {
+						fuentes.get(fuentes.size()-1).grafo.grafo[i][j].listafs[k].libreOcupado = fuentes.get(nroGrafo).grafo.grafo[i][j].listafs[k].libreOcupado;
+						fuentes.get(fuentes.size()-1).grafo.grafo[i][j].listafs[k].id = fuentes.get(nroGrafo).grafo.grafo[i][j].listafs[k].id;
+						fuentes.get(fuentes.size()-1).grafo.grafo[i][j].listafs[k].tiempo = fuentes.get(nroGrafo).grafo.grafo[i][j].listafs[k].tiempo;
+					}
+
+				}
+			}
+		}
+	}
 
 
 	/**

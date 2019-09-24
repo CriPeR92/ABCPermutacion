@@ -72,32 +72,24 @@ public class GrafoMatriz {
 
 	public void restar() {
 		int i, j, k;
-		int id;
 
 		for (i = 0; i < this.grafo.length; i++) {
-			for (j = 0; j < this.grafo.length; j++){
-				for (k = 0; k < this.grafo[i][j].listafs.length; k++){
-					id = this.grafo[i][j].listafs[k].id;
 
-					// para vaciar los lugares ocupados por la conexion
-					if (this.grafo[i][j].listafs[k].tiempo - 1 == 0){
-						while (this.grafo[i][j].listafs[k].id == id && k != this.grafo[i][j].listafs.length+1){
+			for (j = 0; j < this.grafo.length; j++) {
+
+				for (k = 0; k < this.grafo[i][j].listafs.length; k++) {
+
+					if (this.grafo[i][j].listafs[k].id != 0) {
+						if (this.grafo[i][j].listafs[k].tiempo - 1 == 0) {
 							this.grafo[i][j].listafs[k].id = 0;
 							this.grafo[i][j].listafs[k].tiempo = 0;
 							this.grafo[i][j].listafs[k].libreOcupado = 0;
-							k++;
-							if ( k >= this.grafo[i][j].listafs.length) break;
-						}
-						// para restar uno al tiempo de la conexion
-					} else if (this.grafo[i][j].listafs[k].tiempo - 1 > 0) {
-						while (this.grafo[i][j].listafs[k].id == id){
+						} else if (this.grafo[i][j].listafs[k].tiempo - 1 > 0) {
 							this.grafo[i][j].listafs[k].tiempo--;
-							k++;
-							if ( k >= this.grafo[i][j].listafs.length) break;
 						}
 					}
-
 				}
+
 			}
 		}
 	}
@@ -137,7 +129,9 @@ public class GrafoMatriz {
 
 		}
 		// IF PARA SALIR SI NO SE CUMPLIO O NO SE ENCONTRO
-		if(i == long_grafo && concatenado[0] == null) return false;
+		if(i == long_grafo && concatenado[0] == null) {
+			return false;
+		}
 		//concatenado[] es el vector para ver si la conexion nueva entra
 		boolean bandera = true;
 		int inicio = 0;
@@ -205,7 +199,6 @@ public class GrafoMatriz {
 
 		bandera = true;
 		while (bandera){
-
 			/**
 			 * en la variable contador vamos a saber cuantos espacios libres hay para la conexion
 			 * contador_izq = la cantidad de espacios a la izquierda
@@ -251,7 +244,7 @@ public class GrafoMatriz {
 		/**
 		 * en las variables izquierda y derecha se van a guardar cuantos lugares se van a usar para cada lado
 		 */
-		while (izquierda+derecha <= espacios_necesarios){
+		while (espacios_necesarios != 0){
 			if(espacios_necesarios > 0 && contador_izq > 0) {
 				izquierda++;
 				contador_izq--;
@@ -261,6 +254,10 @@ public class GrafoMatriz {
 				derecha++;
 				contador_der--;
 				espacios_necesarios--;
+			}
+			if (contador_der == 0 && contador_izq == 0 && espacios_necesarios > 0) {
+				System.out.println("la conexion no entra");
+				return false;
 			}
 		}
 
@@ -274,19 +271,24 @@ public class GrafoMatriz {
 		 * PARA AGRANDAR LA SOLICITUD
 		 */
 		if (cantfs == espacios) {
-			//while (cantfs > long_conexion) {
 			/**
 			 * se van a asignar los nuevos lugares al camino
 			 */
-
 			for (int k = 1; k < conexiones.length-1; k++) {
 				int izqFalso = izquierda;
 				int derFalso = derecha;
 				h = 1;
 				int origen1 = Integer.parseInt(conexiones[k]);
 				int destino1 = Integer.parseInt(conexiones[k+1]);
+
+				if (izqFalso > 0) {
+					cab = true;
+				} else {
+					cab = false;
+				}
 				while(izqFalso+derFalso > 0){
-					if (cab) {
+//					System.out.println("se traba aca 1");
+					if (izqFalso > 0) {
 						cab = false;
 						this.grafo[origen1][destino1].listafs[inicio - h].libreOcupado = 1;
 						this.grafo[origen1][destino1].listafs[inicio - h].id = this.grafo[origen1][destino1].listafs[inicio].id;
@@ -319,7 +321,7 @@ public class GrafoMatriz {
 							derFalso--;
 						}
 					}
-					if (cab) {
+					if (cab || izqFalso == 0) {
 						h++;
 					}
 				}
@@ -328,11 +330,12 @@ public class GrafoMatriz {
 		}
 		else{
 			System.out.println("la conexion no entra");
+			return false;
 		}
 		return true;
 
 	}
-	
+
 	public int posicionNodo(int nodo) {
 		for(int i=0; i<cadenaVertices.length; i++) {
 			if(cadenaVertices[i]==nodo) return i;

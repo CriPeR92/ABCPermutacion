@@ -56,12 +56,12 @@ public class Asignacion {
                     g.grafo[n2][n1].listafs[mitad].id = id;
                     g.grafo[n1][n2].listafs[mitad].tiempo = g.grafo[n1][n2].tiempo;
                     g.grafo[n2][n1].listafs[mitad].tiempo = g.grafo[n2][n1].tiempo;
-                    if(contador == 0) {
-                        //concatenar y guardar el id de la conexion
-                        g.grafo[n1][n2].enlace.add(id.toString() + ","+ nuevo_camino);
-                        g.grafo[n1][n2].ids.add(id);
-                        contador=1;
-                    }
+
+                    //concatenar y guardar el id de la conexion
+                    g.grafo[n1][n2].enlace.add(id.toString() + ","+ nuevo_camino);
+                    g.grafo[n1][n2].ids.add(id);
+                    g.grafo[n2][n1].enlace.add(id.toString() + ","+ nuevo_camino);
+                    g.grafo[n2][n1].ids.add(id);
 
                 } else if (x != 0 && (x % 2) == 0) {
 
