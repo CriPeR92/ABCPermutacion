@@ -267,18 +267,45 @@ public class Aplicacion {
 			Solicitud listaCaminosPrimera = fuentes.get(fuenteDeComida).solicitudes.get(i);
 			String listaCaminos = null;
 
+			for (int k = 0; k < caminos.size(); k++) {
+				if (caminos.get(k)[0].equals(String.valueOf(listaCaminosPrimera.origen)) && caminos.get(k)[1].equals(String.valueOf(listaCaminosPrimera.destino))) {
+					listaCaminos = caminos.get(k)[2];
+					break;
+				}
+			}
+
 			if (fuentes.get(fuenteDeComida).ids.contains(listaCaminosPrimera.id)) {
-				Boolean reasignar = fuentes.get(fuenteDeComida).grafo.verificar_conexion(listaCaminosPrimera.origen, listaCaminosPrimera.id, listaCaminosPrimera.FS);
+
+				boolean reasignar = fuentes.get(fuenteDeComida).grafo.verificar_conexion(listaCaminosPrimera.origen, listaCaminosPrimera.id, listaCaminosPrimera.FS);
+
+				if (!reasignar) {
+					System.out.println("SE VA A VOLVER A ASIGNAR");
+					BuscarSlot r = new BuscarSlot(fuentes.get(fuenteDeComida).grafo, listaCaminos);
+					resultadoSlot res = r.concatenarCaminos(listaCaminosPrimera.FS, 5, 0);
+					if (res != null) {
+						int h, j, f;
+						for (h = 0; h < fuentes.get(fuenteDeComida).grafo.grafo.length; h++) {
+							for (f = 0; f < fuentes.get(fuenteDeComida).grafo.grafo.length; f++) {
+								for (j = 0; j < fuentes.get(fuenteDeComida).grafo.grafo[h][f].listafs.length; j++) {
+									if (fuentes.get(fuenteDeComida).grafo.grafo[h][f].listafs[j].id == listaCaminosPrimera.id) {
+										fuentes.get(fuenteDeComida).grafo.grafo[h][f].listafs[j].id = 0;
+										fuentes.get(fuenteDeComida).grafo.grafo[h][f].listafs[j].tiempo = 0;
+										fuentes.get(fuenteDeComida).grafo.grafo[h][f].listafs[j].libreOcupado = 0;
+									}
+								}
+							}
+						}
+						System.out.println("Se elimino y se va a guardar de nuevo");
+						Asignacion asignar = new Asignacion(fuentes.get(fuenteDeComida).grafo, res);
+						asignar.marcarSlotUtilizados(listaCaminosPrimera.id);
+					} else {
+						System.out.println("NO SE ENCONTRO LUGAR");
+					}
+				}
 
 
 			} else {
 
-				for (int k = 0; k < caminos.size(); k++) {
-					if (caminos.get(k)[0].equals(String.valueOf(listaCaminosPrimera.origen)) && caminos.get(k)[1].equals(String.valueOf(listaCaminosPrimera.destino))) {
-						listaCaminos = caminos.get(k)[2];
-						break;
-					}
-				}
 				BuscarSlot r = new BuscarSlot(fuentes.get(fuenteDeComida).grafo, listaCaminos);
 				resultadoSlot res = r.concatenarCaminos(listaCaminosPrimera.FS, 5, 0);
 
@@ -480,19 +507,44 @@ public class Aplicacion {
 			Solicitud listaCaminosPrimera = fuentes.get(fuentes.size() - 1).solicitudes.get(p);
 			String listaCaminos = null;
 
-			if (fuentes.get(fuentes.size()-1).ids.contains(listaCaminosPrimera.id)) {
-				fuentes.get(fuentes.size()-1).grafo.verificar_conexion(listaCaminosPrimera.origen, listaCaminosPrimera.id, listaCaminosPrimera.FS);
+			for (int l = 0; l < caminos.size(); l++) {
+				if (caminos.get(l)[0].equals(String.valueOf(listaCaminosPrimera.origen)) && caminos.get(l)[1].equals(String.valueOf(listaCaminosPrimera.destino))) {
+					listaCaminos = caminos.get(l)[2];
+					break;
+				}
+			}
 
-			} else {
-				/**
-				 * Verificar si la conexion ya existe
-				 */
-				for (int l = 0; l < caminos.size(); l++) {
-					if (caminos.get(l)[0].equals(String.valueOf(listaCaminosPrimera.origen)) && caminos.get(l)[1].equals(String.valueOf(listaCaminosPrimera.destino))) {
-						listaCaminos = caminos.get(l)[2];
-						break;
+			if (fuentes.get(fuentes.size()-1).ids.contains(listaCaminosPrimera.id)) {
+
+				boolean reasignar = fuentes.get(fuentes.size()-1).grafo.verificar_conexion(listaCaminosPrimera.origen, listaCaminosPrimera.id, listaCaminosPrimera.FS);
+
+				if (!reasignar) {
+					System.out.println("SE VA A VOLVER A ASIGNAR");
+					BuscarSlot r = new BuscarSlot(fuentes.get(fuentes.size()-1).grafo, listaCaminos);
+					resultadoSlot res = r.concatenarCaminos(listaCaminosPrimera.FS, 5, 0);
+					if (res != null) {
+						int i, h, f;
+						for (i = 0; i < fuentes.get(fuentes.size()-1).grafo.grafo.length; i++) {
+							for (f = 0; f < fuentes.get(fuentes.size()-1).grafo.grafo.length; f++) {
+								for (h = 0; h < fuentes.get(fuentes.size()-1).grafo.grafo[i][f].listafs.length; h++) {
+									if (fuentes.get(fuentes.size()-1).grafo.grafo[i][f].listafs[h].id == listaCaminosPrimera.id) {
+										fuentes.get(fuentes.size()-1).grafo.grafo[i][f].listafs[h].id = 0;
+										fuentes.get(fuentes.size()-1).grafo.grafo[i][f].listafs[h].tiempo = 0;
+										fuentes.get(fuentes.size()-1).grafo.grafo[i][f].listafs[h].libreOcupado = 0;
+									}
+								}
+							}
+						}
+						System.out.println("Se elimino y se va a guardar de nuevo");
+						Asignacion asignar = new Asignacion(fuentes.get(fuentes.size()-1).grafo, res);
+						asignar.marcarSlotUtilizados(listaCaminosPrimera.id);
+					} else {
+						System.out.println("NO SE ENCONTRO LUGAR");
 					}
 				}
+
+			} else {
+
 				BuscarSlot r = new BuscarSlot(fuentes.get(fuentes.size() - 1).grafo, listaCaminos);
 				resultadoSlot res = r.concatenarCaminos(listaCaminosPrimera.FS, 5, 0);
 
