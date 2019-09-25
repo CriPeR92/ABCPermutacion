@@ -274,7 +274,10 @@ public class GrafoMatriz {
 		//vamos a ver si entra la conexion nueva y vamos a asignar
 		int espacios = long_conexion + izquierda + derecha;
 		int h = 1;
+		int g = 1;
 		boolean cab = true;
+		boolean banderaIzq = false;
+		boolean banderaDer = false;
 		/**
 		 * PARA AGRANDAR LA SOLICITUD
 		 */
@@ -286,18 +289,18 @@ public class GrafoMatriz {
 				int izqFalso = izquierda;
 				int derFalso = derecha;
 				h = 1;
+				g = 1;
+				banderaIzq = false;
+				banderaDer = false;
 				int origen1 = Integer.parseInt(conexiones[k]);
 				int destino1 = Integer.parseInt(conexiones[k+1]);
+				cab = true;
 
-				if (izqFalso > 0) {
-					cab = true;
-				} else {
-					cab = false;
-				}
 				while(izqFalso+derFalso > 0){
-//					System.out.println("se traba aca 1");
+					System.out.println("izq " + izqFalso + "der " + derFalso);
 					if (izqFalso > 0) {
 						cab = false;
+						banderaIzq = true;
 						this.grafo[origen1][destino1].listafs[inicio - h].libreOcupado = 1;
 						this.grafo[origen1][destino1].listafs[inicio - h].id = this.grafo[origen1][destino1].listafs[inicio].id;
 						this.grafo[origen1][destino1].listafs[inicio - h].tiempo = this.grafo[origen1][destino1].listafs[inicio].tiempo;
@@ -306,10 +309,11 @@ public class GrafoMatriz {
 						this.grafo[destino1][origen1].listafs[inicio - h].id = this.grafo[origen1][destino1].listafs[inicio].id;
 						this.grafo[destino1][origen1].listafs[inicio - h].tiempo = this.grafo[origen1][destino1].listafs[inicio].tiempo;
 						izqFalso--;
-					} else {
-						System.out.println(derFalso);
-						System.out.println(longitud + " " + inicio);
-						if (h==1) {
+					} else if(derFalso > 0) {
+						System.out.println(longitud + " " + inicio + " " + h);
+						if (!banderaDer) {
+							banderaDer = true;
+							System.out.println("entro en h==1");
 							cab = true;
 							this.grafo[origen1][destino1].listafs[longitud + inicio].libreOcupado = 1;
 							this.grafo[origen1][destino1].listafs[longitud + inicio].id = this.grafo[origen1][destino1].listafs[inicio].id;
@@ -321,20 +325,23 @@ public class GrafoMatriz {
 							derFalso--;
 						} else {
 							cab = true;
-							System.out.println(h);
-							this.grafo[origen1][destino1].listafs[(longitud + inicio) + (h-1)].libreOcupado = 1;
-							this.grafo[origen1][destino1].listafs[(longitud + inicio) + (h-1)].id = this.grafo[origen1][destino1].listafs[inicio].id;
-							this.grafo[origen1][destino1].listafs[(longitud + inicio) + (h-1)].tiempo = this.grafo[origen1][destino1].listafs[inicio].tiempo;
+							System.out.println("entro en else");
+//							System.out.println(h);
+							this.grafo[origen1][destino1].listafs[(longitud + inicio) + (g-1)].libreOcupado = 1;
+							this.grafo[origen1][destino1].listafs[(longitud + inicio) + (g-1)].id = this.grafo[origen1][destino1].listafs[inicio].id;
+							this.grafo[origen1][destino1].listafs[(longitud + inicio) + (g-1)].tiempo = this.grafo[origen1][destino1].listafs[inicio].tiempo;
 
-							this.grafo[destino1][origen1].listafs[(longitud + inicio) + (h-1)].libreOcupado = 1;
-							this.grafo[destino1][origen1].listafs[(longitud + inicio) + (h-1)].id = this.grafo[origen1][destino1].listafs[inicio].id;
-							this.grafo[destino1][origen1].listafs[(longitud + inicio) + (h-1)].tiempo = this.grafo[origen1][destino1].listafs[inicio].tiempo;
+							this.grafo[destino1][origen1].listafs[(longitud + inicio) + (g-1)].libreOcupado = 1;
+							this.grafo[destino1][origen1].listafs[(longitud + inicio) + (g-1)].id = this.grafo[origen1][destino1].listafs[inicio].id;
+							this.grafo[destino1][origen1].listafs[(longitud + inicio) + (g-1)].tiempo = this.grafo[origen1][destino1].listafs[inicio].tiempo;
 							derFalso--;
 						}
 					}
-					if (cab || izqFalso == 0) {
-						h++;
-					}
+//					if (cab || izqFalso == 0) {
+//						h++;
+//					}
+					if(banderaIzq) h++;
+					if (banderaDer) g++;
 				}
 			}
 			//}

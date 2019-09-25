@@ -13,7 +13,7 @@ public class Aplicacion {
 	public static VariableGraph graph = new VariableGraph("data/test_25");
 	public static ArrayList<Float> pi = new ArrayList<>();
 	public static ArrayList<String[]> caminos = new ArrayList<>();
-	public static int abejas = 1;
+	public static int abejas = 5;
 
 
 	public static void main(String[] args) throws InterruptedException, IOException {
@@ -35,7 +35,7 @@ public class Aplicacion {
 			}
 			int k;
 
-			for (int i = 0; i < 5; i++) {
+			for (int i = 0; i < 50; i++) {
 				primerPaso(abejas);
 				borrarGrafos();
 				segundoPaso(abejas);

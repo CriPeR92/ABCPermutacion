@@ -2,13 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c3879f2f-7a88-4d06-a12e-f5e6386bd08b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/edu/asu/emit/qyan/alg/control/Aplicacion$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/edu/asu/emit/qyan/alg/control/Aplicacion$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/edu/asu/emit/qyan/alg/control/Aplicacion$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/edu/asu/emit/qyan/alg/control/Aplicacion$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/edu/asu/emit/qyan/alg/control/Aplicacion.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/edu/asu/emit/qyan/alg/control/Aplicacion.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/edu/asu/emit/qyan/alg/control/GrafoMatriz.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/edu/asu/emit/qyan/alg/control/GrafoMatriz.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/control/Aplicacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/control/Aplicacion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/control/GrafoMatriz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/control/GrafoMatriz.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,28 +29,58 @@
     <session id="463272760">
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="46" />
+          <entry key="java" value="357" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="46" />
+          <entry key="JAVA" value="357" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="java" value="1" />
+          <entry key="solicitudes1" value="1" />
+          <entry key="solicitudes3" value="1" />
+          <entry key="solicitudes4" value="1" />
+          <entry key="solicitudes5" value="1" />
+          <entry key="solicitudes6" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="JAVA" value="1" />
+          <entry key="PLAIN_TEXT" value="5" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/control/Aplicacion.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="393">
-              <caret line="543" column="17" lean-forward="true" selection-start-line="543" selection-start-column="17" selection-end-line="543" selection-end-column="17" />
+            <state relative-caret-position="261">
+              <caret line="32" selection-start-line="32" selection-end-line="32" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#8171#8172#0" expanded="true" />
                 <element signature="e#8239#8240#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data/solicitudes1">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/control/GrafoMatriz.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="258">
+              <caret line="326" column="37" lean-forward="true" selection-start-line="326" selection-start-column="37" selection-end-line="326" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -67,43 +95,23 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/control/Enlace.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="29" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/data/solicitudes3">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/control/GrafoMatriz.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5070">
-              <caret line="349" column="9" selection-start-line="349" selection-start-column="9" selection-end-line="349" selection-end-column="9" />
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/data/solicitudes4">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/control/Asignacion.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="975">
-              <caret line="65" column="20" selection-start-line="65" selection-start-column="20" selection-end-line="65" selection-end-column="20" />
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/data/solicitudes5">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/control/BuscarSlot.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="33" column="79" selection-start-line="33" selection-start-column="79" selection-end-line="33" selection-end-column="79" />
-              <folding>
-                <element signature="e#494#495#0" expanded="true" />
-                <element signature="e#544#545#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/data/solicitudes6">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -117,8 +125,11 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>verificar</find>
       <find>verificar_con</find>
+      <find>System</find>
+      <find>se lee el archivo</find>
+      <find>System.out.println</find>
+      <find>verificar</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -128,6 +139,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/control/Aplicacion.java" />
+        <option value="$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/control/GrafoMatriz.java" />
       </list>
     </option>
   </component>
@@ -321,15 +333,62 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/control/Enlace.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="29" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/control/Asignacion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="975">
+          <caret line="65" column="20" selection-start-line="65" selection-start-column="20" selection-end-line="65" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/control/BuscarSlot.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="33" column="79" selection-start-line="33" selection-start-column="79" selection-end-line="33" selection-end-column="79" />
+          <folding>
+            <element signature="e#494#495#0" expanded="true" />
+            <element signature="e#544#545#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/solicitudes3">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/solicitudes4">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/solicitudes5">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/solicitudes6">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/solicitudes1">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/control/Aplicacion.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="393">
-          <caret line="543" column="17" lean-forward="true" selection-start-line="543" selection-start-column="17" selection-end-line="543" selection-end-column="17" />
+        <state relative-caret-position="261">
+          <caret line="32" selection-start-line="32" selection-end-line="32" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#8171#8172#0" expanded="true" />
             <element signature="e#8239#8240#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/control/GrafoMatriz.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="258">
+          <caret line="326" column="37" lean-forward="true" selection-start-line="326" selection-start-column="37" selection-end-line="326" selection-end-column="37" />
         </state>
       </provider>
     </entry>
