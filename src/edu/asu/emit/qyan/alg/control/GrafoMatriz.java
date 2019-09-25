@@ -214,14 +214,22 @@ public class GrafoMatriz {
 				}
 
 				if (p == 1) {
-					if (concatenado[(longitud + inicio)].libreOcupado == 0 && verificador_der == 0) {
-						contador_der++;
+					if (inicio + longitud < concatenado.length) {
+						if (concatenado[(longitud + inicio)].libreOcupado == 0 && verificador_der == 0) {
+							contador_der++;
+						} else {
+							verificador_der = 1;
+						}
 					} else {
 						verificador_der = 1;
 					}
 				} else {
-					if ((longitud+inicio+(p-1)) < concatenado.length && concatenado[(longitud + inicio) + (p-1)].libreOcupado == 0 && verificador_der == 0) {
-						contador_der++;
+					if (inicio + longitud < concatenado.length) {
+						if ((longitud + inicio + (p - 1)) < concatenado.length && concatenado[(longitud + inicio) + (p - 1)].libreOcupado == 0 && verificador_der == 0) {
+							contador_der++;
+						} else {
+							verificador_der = 1;
+						}
 					} else {
 						verificador_der = 1;
 					}
@@ -299,6 +307,8 @@ public class GrafoMatriz {
 						this.grafo[destino1][origen1].listafs[inicio - h].tiempo = this.grafo[origen1][destino1].listafs[inicio].tiempo;
 						izqFalso--;
 					} else {
+						System.out.println(derFalso);
+						System.out.println(longitud + " " + inicio);
 						if (h==1) {
 							cab = true;
 							this.grafo[origen1][destino1].listafs[longitud + inicio].libreOcupado = 1;
@@ -311,6 +321,7 @@ public class GrafoMatriz {
 							derFalso--;
 						} else {
 							cab = true;
+							System.out.println(h);
 							this.grafo[origen1][destino1].listafs[(longitud + inicio) + (h-1)].libreOcupado = 1;
 							this.grafo[origen1][destino1].listafs[(longitud + inicio) + (h-1)].id = this.grafo[origen1][destino1].listafs[inicio].id;
 							this.grafo[origen1][destino1].listafs[(longitud + inicio) + (h-1)].tiempo = this.grafo[origen1][destino1].listafs[inicio].tiempo;
