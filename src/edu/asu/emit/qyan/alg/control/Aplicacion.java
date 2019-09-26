@@ -19,14 +19,15 @@ public class Aplicacion {
 	public static void main(String[] args) throws InterruptedException, IOException {
 
 //		crearArchivoCaminos();
-		leerArchivoCaminos();
-		crearFuenteDeComida(abejas, true);
+		for (int p = 0; p < 30; p++) {
+			leerArchivoCaminos();
+			crearFuenteDeComida(abejas, true);
 		for (int l = 1; l <= 6; l++) {
-//		for (int p = 0; p < 30; p++) {
+
 //		long startTime = System.nanoTime();
 
 			leerArchivoSolicitudes(abejas, true, l);
-			System.out.println("se lee el archivo " + l);
+//			System.out.println("se lee el archivo " + l);
 			boolean bandera = true;
 
 			for (int i = 0; i < fuentes.size(); i++) {
@@ -35,7 +36,7 @@ public class Aplicacion {
 			}
 			int k;
 
-			for (int i = 0; i < 50; i++) {
+			for (int i = 0; i < 5; i++) {
 				primerPaso(abejas);
 				borrarGrafos();
 				segundoPaso(abejas);
@@ -54,10 +55,11 @@ public class Aplicacion {
 //		long endTime   = System.nanoTime();
 //		long totalTime = (endTime - startTime)/1000000000;
 //		System.out.println(totalTime);
-//			fuentes.clear();
-//			pi.clear();
-//			caminos.clear();
-//		}
+			fuentes.clear();
+			pi.clear();
+			caminos.clear();
+			solicitudes.clear();
+		}
 
 	}
 
@@ -279,7 +281,7 @@ public class Aplicacion {
 				boolean reasignar = fuentes.get(fuenteDeComida).grafo.verificar_conexion(listaCaminosPrimera.origen, listaCaminosPrimera.id, listaCaminosPrimera.FS);
 
 				if (!reasignar) {
-					System.out.println("SE VA A VOLVER A ASIGNAR");
+//					System.out.println("SE VA A VOLVER A ASIGNAR");
 					BuscarSlot r = new BuscarSlot(fuentes.get(fuenteDeComida).grafo, listaCaminos);
 					resultadoSlot res = r.concatenarCaminos(listaCaminosPrimera.FS, 5, 0);
 					if (res != null) {
@@ -295,11 +297,11 @@ public class Aplicacion {
 								}
 							}
 						}
-						System.out.println("Se elimino y se va a guardar de nuevo");
+//						System.out.println("Se elimino y se va a guardar de nuevo");
 						Asignacion asignar = new Asignacion(fuentes.get(fuenteDeComida).grafo, res);
 						asignar.marcarSlotUtilizados(listaCaminosPrimera.id);
 					} else {
-						System.out.println("NO SE ENCONTRO LUGAR");
+//						System.out.println("NO SE ENCONTRO LUGAR");
 					}
 				}
 
@@ -519,7 +521,7 @@ public class Aplicacion {
 				boolean reasignar = fuentes.get(fuentes.size()-1).grafo.verificar_conexion(listaCaminosPrimera.origen, listaCaminosPrimera.id, listaCaminosPrimera.FS);
 
 				if (!reasignar) {
-					System.out.println("SE VA A VOLVER A ASIGNAR");
+//					System.out.println("SE VA A VOLVER A ASIGNAR");
 					BuscarSlot r = new BuscarSlot(fuentes.get(fuentes.size()-1).grafo, listaCaminos);
 					resultadoSlot res = r.concatenarCaminos(listaCaminosPrimera.FS, 5, 0);
 					if (res != null) {
@@ -535,11 +537,11 @@ public class Aplicacion {
 								}
 							}
 						}
-						System.out.println("Se elimino y se va a guardar de nuevo");
+//						System.out.println("Se elimino y se va a guardar de nuevo");
 						Asignacion asignar = new Asignacion(fuentes.get(fuentes.size()-1).grafo, res);
 						asignar.marcarSlotUtilizados(listaCaminosPrimera.id);
 					} else {
-						System.out.println("NO SE ENCONTRO LUGAR");
+//						System.out.println("NO SE ENCONTRO LUGAR");
 					}
 				}
 
@@ -771,6 +773,8 @@ public class Aplicacion {
 		g.agregarRuta(24, 8, 1, 3, 200);
 		FuentesComida resultadoFinal = new FuentesComida(g);
 
+		int nroGrafo = 0;
+
 		for (int i = 0; i < fuentes.size(); i++) {
 			cantBloqueados = 0;
 			cantBloqueadosNuevo = 0;
@@ -792,8 +796,10 @@ public class Aplicacion {
 				}
 				if (cantBloqueadosNuevo < cantBloqueados) {
 					resultadoFinal = fuentes.get(i);
+					nroGrafo = i;
 				} else if (cantBloqueados == cantBloqueadosNuevo && resultadoFinal.fsUtilizados > fuentes.get(i).fsUtilizados) {
 					resultadoFinal = fuentes.get(i);
+					nroGrafo = i;
 				}
 			}
 
@@ -806,8 +812,28 @@ public class Aplicacion {
 			}
 		}
 
+		int m,n,b = 0;
+		float contadorEntropia = 0;
+		int empezoEn = 0;
+
+		for (m = 0; m < fuentes.get(nroGrafo).grafo.grafo.length; m++) {
+			for (n = 0; n < fuentes.get(nroGrafo).grafo.grafo.length; n++) {
+				if (fuentes.get(nroGrafo).grafo.grafo[m][n].distancia != 0) {
+					empezoEn = fuentes.get(nroGrafo).grafo.grafo[m][n].listafs[0].libreOcupado;
+					for (b = 0; b < fuentes.get(nroGrafo).grafo.grafo[m][n].listafs.length; b++) {
+						if (empezoEn != fuentes.get(nroGrafo).grafo.grafo[m][n].listafs[b].libreOcupado) {
+							empezoEn = fuentes.get(nroGrafo).grafo.grafo[m][n].listafs[b].libreOcupado;
+							contadorEntropia++;
+						}
+					}
+				}
+			}
+		}
+
+
+
 		float indice = (float)resultadoFinal.fsUtilizados/200;
-		System.out.println("el indice es: " + indice + " la cantidad de bloqueados es: " + cantBloqueados);
+		System.out.println(indice + " " + cantBloqueados +" "+ (contadorEntropia/45));
 	}
 
 }

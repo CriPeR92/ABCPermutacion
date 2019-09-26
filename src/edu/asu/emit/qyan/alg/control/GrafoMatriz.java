@@ -264,7 +264,7 @@ public class GrafoMatriz {
 				espacios_necesarios--;
 			}
 			if (contador_der == 0 && contador_izq == 0 && espacios_necesarios > 0) {
-				System.out.println("la conexion no entra");
+//				System.out.println("la conexion no entra");
 				return false;
 			}
 		}
@@ -297,7 +297,7 @@ public class GrafoMatriz {
 				cab = true;
 
 				while(izqFalso+derFalso > 0){
-					System.out.println("izq " + izqFalso + "der " + derFalso);
+//					System.out.println("izq " + izqFalso + "der " + derFalso);
 					if (izqFalso > 0) {
 						cab = false;
 						banderaIzq = true;
@@ -310,10 +310,10 @@ public class GrafoMatriz {
 						this.grafo[destino1][origen1].listafs[inicio - h].tiempo = this.grafo[origen1][destino1].listafs[inicio].tiempo;
 						izqFalso--;
 					} else if(derFalso > 0) {
-						System.out.println(longitud + " " + inicio + " " + h);
+//						System.out.println(longitud + " " + inicio + " " + h);
 						if (!banderaDer) {
 							banderaDer = true;
-							System.out.println("entro en h==1");
+//							System.out.println("entro en h==1");
 							cab = true;
 							this.grafo[origen1][destino1].listafs[longitud + inicio].libreOcupado = 1;
 							this.grafo[origen1][destino1].listafs[longitud + inicio].id = this.grafo[origen1][destino1].listafs[inicio].id;
@@ -325,7 +325,7 @@ public class GrafoMatriz {
 							derFalso--;
 						} else {
 							cab = true;
-							System.out.println("entro en else");
+//							System.out.println("entro en else");
 //							System.out.println(h);
 							this.grafo[origen1][destino1].listafs[(longitud + inicio) + (g-1)].libreOcupado = 1;
 							this.grafo[origen1][destino1].listafs[(longitud + inicio) + (g-1)].id = this.grafo[origen1][destino1].listafs[inicio].id;
@@ -347,7 +347,7 @@ public class GrafoMatriz {
 			//}
 		}
 		else{
-			System.out.println("la conexion no entra");
+//			System.out.println("la conexion no entra");
 			return false;
 		}
 		return true;
