@@ -22,7 +22,7 @@ public class Aplicacion {
 		for (int p = 0; p < 30; p++) {
 			leerArchivoCaminos();
 			crearFuenteDeComida(abejas, true);
-		for (int l = 1; l <= 6; l++) {
+		for (int l = 1; l <= 2; l++) {
 
 //		long startTime = System.nanoTime();
 
@@ -36,7 +36,7 @@ public class Aplicacion {
 			}
 			int k;
 
-			for (int i = 0; i < 5; i++) {
+			for (int i = 0; i < 300; i++) {
 				primerPaso(abejas);
 				borrarGrafos();
 				segundoPaso(abejas);
@@ -833,7 +833,7 @@ public class Aplicacion {
 
 
 		float indice = (float)resultadoFinal.fsUtilizados/200;
-		System.out.println(indice + " " + cantBloqueados +" "+ (contadorEntropia/45));
+		System.out.println(indice + " " + cantBloqueados +" "+ ((contadorEntropia/45)/2));
 	}
 
 }
