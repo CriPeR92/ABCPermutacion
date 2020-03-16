@@ -13,17 +13,17 @@ public class Aplicacion {
 	public static VariableGraph graph = new VariableGraph("data/test_25");
 	public static ArrayList<Float> pi = new ArrayList<>();
 	public static ArrayList<String[]> caminos = new ArrayList<>();
-	public static int abejas = 5;
+	public static int abejas = 2;
+	public static int id = 1;
 
 
 	public static void main(String[] args) throws InterruptedException, IOException {
 
-//		crearArchivoCaminos();
-		for (int p = 0; p < 30; p++) {
+//		for (intvhivoCaminos();
+//		for (int p = 0; p < 30; p++) {
 			leerArchivoCaminos();
 			crearFuenteDeComida(abejas, true);
-		for (int l = 1; l <= 2; l++) {
-
+		for (int l = 1; l <= 3; l++) {
 //		long startTime = System.nanoTime();
 
 			leerArchivoSolicitudes(abejas, true, l);
@@ -36,7 +36,7 @@ public class Aplicacion {
 			}
 			int k;
 
-			for (int i = 0; i < 300; i++) {
+			for (int i = 0; i < 10; i++) {
 				primerPaso(abejas);
 				borrarGrafos();
 				segundoPaso(abejas);
@@ -50,16 +50,17 @@ public class Aplicacion {
 			for (k=0; k < abejas; k++) {
 				fuentes.get(k).grafo.restar();
 			}
-		}
 			elegirConexion();
+		}
+
 //		long endTime   = System.nanoTime();
 //		long totalTime = (endTime - startTime)/1000000000;
 //		System.out.println(totalTime);
-			fuentes.clear();
-			pi.clear();
-			caminos.clear();
-			solicitudes.clear();
-		}
+//			fuentes.clear();
+//			pi.clear();
+//			caminos.clear();
+//			solicitudes.clear();
+//		}
 
 	}
 
@@ -833,7 +834,69 @@ public class Aplicacion {
 
 
 		float indice = (float)resultadoFinal.fsUtilizados/200;
-		System.out.println(indice + " " + cantBloqueados +" "+ ((contadorEntropia/45)/2));
+		System.out.println(indice);
+	}
+
+	public static void crearArchivosSolicitudes(int l) throws IOException {
+		PrintWriter writer = null;
+		int contador = 0;
+		try {
+			writer = new PrintWriter("data/solicitudes" + l, "UTF-8");
+		} catch (FileNotFoundException | UnsupportedEncodingException e) {
+			e.printStackTrace();
+		}
+		for (int i = 0; i <= 50; i++) {
+			int origen = (int) (Math.random() * (15) + 1);
+			int destino = (int) (Math.random() * (15) + 1);
+			int fs = 1 + (int) (Math.random() * (10 - 1) + 1);
+			int tiempo = 1 + (int) (Math.random() * (10) + 1);
+			if (origen == destino) {
+				while (origen == destino) {
+					destino = (int) (Math.random() * (15) + 1);
+				}
+			}
+
+			writer.println(origen + "," + destino + "," + fs + "," + tiempo + "," + id);
+			id++;
+		}
+
+		if (l > 1) {
+
+			FileReader input = new FileReader("data/solicitudes" + (l - 1));
+			BufferedReader bufRead = new BufferedReader(input);
+
+			String linea = bufRead.readLine();
+
+			while (linea != null && contador < 10) {
+
+				if (linea.trim().equals("")) {
+					linea = bufRead.readLine();
+					continue;
+				}
+				String[] str_list = linea.trim().split("\\s*,\\s*");
+				int origen = Integer.parseInt(str_list[0]);
+				int destino = Integer.parseInt(str_list[1]);
+				int fsActual = Integer.parseInt(str_list[2]);
+				int tiempo = Integer.parseInt(str_list[3]);
+				int id1 = Integer.parseInt(str_list[4]);
+				int fsNuevo = 1 + (int) (Math.random() * (10 - 1) + 1);
+
+				if (fsActual == fsNuevo) {
+					while (fsActual == fsNuevo) {
+						fsNuevo = 1 + (int) (Math.random() * (10 - 1) + 1);
+					}
+				}
+
+				writer.println(origen + "," + destino + "," + fsNuevo + "," + tiempo + "," + id1);
+				contador++;
+				linea = bufRead.readLine();
+
+			}
+
+			writer.close();
+		} else {
+			writer.close();
+		}
 	}
 
 }
