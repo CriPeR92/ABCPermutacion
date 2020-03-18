@@ -18,12 +18,15 @@ public class Aplicacion {
 
 
 	public static void main(String[] args) throws InterruptedException, IOException {
-
+		for (int h = 1; h <= 100; h++) {
+			crearArchivosSolicitudes(h);
+		}
+		crearArchivoCaminos();
 //		for (intvhivoCaminos();
 //		for (int p = 0; p < 30; p++) {
 			leerArchivoCaminos();
 			crearFuenteDeComida(abejas, true);
-		for (int l = 1; l <= 3; l++) {
+		for (int l = 1; l <= 100; l++) {
 //		long startTime = System.nanoTime();
 
 			leerArchivoSolicitudes(abejas, true, l);
@@ -117,7 +120,7 @@ public class Aplicacion {
 
 	public static void leerArchivoSolicitudes(int cantFuente, boolean parametro, int l) throws IOException {
 
-		if (l == 10) {
+		if (l == 10000) {
 			for (int h = 0; h < solicitudes.size(); h++) {
 				fuentes.get(fuentes.size() - 1).solicitudes.add(solicitudes.get(h));
 			}
@@ -139,14 +142,14 @@ public class Aplicacion {
 				/**
 				 * Calculo para la cantidad de fs
 				 */
-				int calAux = Integer.parseInt(str_list[2]);
-				double doubleAux = Integer.parseInt(str_list[2]);
-				doubleAux = Math.ceil(calAux / 10);
-				calAux = (int) Math.ceil(doubleAux / 12);
+//				int calAux = Integer.parseInt(str_list[2]);
+//				double doubleAux = Integer.parseInt(str_list[2]);
+//				doubleAux = Math.ceil(calAux / 10);
+//				calAux = (int) Math.ceil(doubleAux / 12);
 
 				int origen = Integer.parseInt(str_list[0]);
 				int destino = Integer.parseInt(str_list[1]);
-				int fs = calAux;
+				int fs =  Integer.parseInt(str_list[2]);
 				int tiempo = Integer.parseInt(str_list[3]);
 				int id = Integer.parseInt(str_list[4]);
 
@@ -302,6 +305,7 @@ public class Aplicacion {
 						Asignacion asignar = new Asignacion(fuentes.get(fuenteDeComida).grafo, res);
 						asignar.marcarSlotUtilizados(listaCaminosPrimera.id);
 					} else {
+						fuentes.get(fuenteDeComida).semiBloqueados++;
 //						System.out.println("NO SE ENCONTRO LUGAR");
 					}
 				}
@@ -542,6 +546,7 @@ public class Aplicacion {
 						Asignacion asignar = new Asignacion(fuentes.get(fuentes.size()-1).grafo, res);
 						asignar.marcarSlotUtilizados(listaCaminosPrimera.id);
 					} else {
+						fuentes.get(fuentes.size()-1).semiBloqueados++;
 //						System.out.println("NO SE ENCONTRO LUGAR");
 					}
 				}
@@ -708,7 +713,7 @@ public class Aplicacion {
 			if (fuentes.get(i).modificado >= 9) {
 				fuentes.remove(i);
 				crearFuenteDeComida(1, false);
-				leerArchivoSolicitudes(abejas, false, 10);
+				leerArchivoSolicitudes(abejas, false, 10000);
 				ordenarSolicitudes(fuentes.size()-1, false);
 				fuentes.get(fuentes.size()-1).fsUtilizados = calcularFsUno(fuentes.size()-1);
 			}
@@ -834,7 +839,7 @@ public class Aplicacion {
 
 
 		float indice = (float)resultadoFinal.fsUtilizados/200;
-		System.out.println(indice);
+		System.out.println(resultadoFinal.semiBloqueados);
 	}
 
 	public static void crearArchivosSolicitudes(int l) throws IOException {
@@ -845,14 +850,14 @@ public class Aplicacion {
 		} catch (FileNotFoundException | UnsupportedEncodingException e) {
 			e.printStackTrace();
 		}
-		for (int i = 0; i <= 50; i++) {
-			int origen = (int) (Math.random() * (15) + 1);
-			int destino = (int) (Math.random() * (15) + 1);
+		for (int i = 1; i <= 50; i++) {
+			int origen = (int) (Math.random() * (24) + 1);
+			int destino = (int) (Math.random() * (24) + 1);
 			int fs = 1 + (int) (Math.random() * (10 - 1) + 1);
 			int tiempo = 1 + (int) (Math.random() * (10) + 1);
 			if (origen == destino) {
 				while (origen == destino) {
-					destino = (int) (Math.random() * (15) + 1);
+					destino = (int) (Math.random() * (24) + 1);
 				}
 			}
 
