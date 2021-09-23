@@ -33,67 +33,59 @@ package edu.asu.emit.qyan.alg.model;
 
 
 /**
- * Note this class borrows idea from the code in 
- * 	http://www.superliminal.com/sources/Pair.java.html.
- *
- * @author <a href='Yan.Qi@asu.edu'>Yan Qi</a>
- * @modified $Revision: 431 $
- * @latest $Id: Pair.java 431 2008-07-27 23:35:56Z qyan $
+ * Note this class borrows idea from the code in
+ * http://www.superliminal.com/sources/Pair.java.html.
  *
  * @param <TYPE1>
  * @param <TYPE2>
+ * @author <a href='Yan.Qi@asu.edu'>Yan Qi</a>
+ * @modified $Revision: 431 $
+ * @latest $Id: Pair.java 431 2008-07-27 23:35:56Z qyan $
  */
-public class Pair<TYPE1, TYPE2> 
-{
+public class Pair<TYPE1, TYPE2> {
     public TYPE1 o1;
     public TYPE2 o2;
-    
-    public Pair(TYPE1 o1, TYPE2 o2) 
-    { 
-    	this.o1 = o1; this.o2 = o2; 
+
+    public Pair(TYPE1 o1, TYPE2 o2) {
+        this.o1 = o1;
+        this.o2 = o2;
     }
 
-    public TYPE1 first()
-    {
-    	return o1;
+    public TYPE1 first() {
+        return o1;
     }
-    
-    public TYPE2 second()
-    {
-    	return o2;
-    }
-        
 
-	/* (non-Javadoc)
+    public TYPE2 second() {
+        return o2;
+    }
+
+
+    /* (non-Javadoc)
      * @see java.lang.Object#hashCode()
      * Note, I don't know if it works well. Maybe in some tricky case, collision may happen.
      */
-    public int hashCode() 
-    {
+    public int hashCode() {
         int code = 0;
-        if(o1 != null)
+        if (o1 != null)
             code = o1.hashCode();
-        if(o2 != null)
-            code = code/2 + o2.hashCode()/2;
+        if (o2 != null)
+            code = code / 2 + o2.hashCode() / 2;
         return code;
     }
 
-    public static boolean same(Object o1, Object o2) 
-    {
+    public static boolean same(Object o1, Object o2) {
         return o1 == null ? o2 == null : o1.equals(o2);
     }
 
     @SuppressWarnings("unchecked")
-	public boolean equals(Object obj) 
-    {
-        if( ! (obj instanceof Pair))
+    public boolean equals(Object obj) {
+        if (!(obj instanceof Pair))
             return false;
-        Pair<TYPE1, TYPE2> p = (Pair<TYPE1, TYPE2>)obj;
+        Pair<TYPE1, TYPE2> p = (Pair<TYPE1, TYPE2>) obj;
         return same(p.o1, this.o1) && same(p.o2, this.o2);
     }
 
-    public String toString() 
-    {
-        return "Pair{"+o1+", "+o2+"}";
+    public String toString() {
+        return "Pair{" + o1 + ", " + o2 + "}";
     }
 }

@@ -2,115 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c3879f2f-7a88-4d06-a12e-f5e6386bd08b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/edu/asu/emit/qyan/alg/control/Aplicacion$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/edu/asu/emit/qyan/alg/control/Aplicacion$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/edu/asu/emit/qyan/alg/control/Aplicacion$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/edu/asu/emit/qyan/alg/control/Aplicacion$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/edu/asu/emit/qyan/alg/control/Aplicacion.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/edu/asu/emit/qyan/alg/control/Aplicacion.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/edu/asu/emit/qyan/alg/control/GrafoMatriz.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/edu/asu/emit/qyan/alg/control/GrafoMatriz.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/Kcaminos" beforeDir="false" afterPath="$PROJECT_DIR$/data/Kcaminos" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/solicitudes1" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/solicitudes10" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes10" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/solicitudes100" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes100" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/solicitudes11" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes11" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/solicitudes12" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes12" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/solicitudes13" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes13" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/solicitudes14" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes14" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/solicitudes15" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes15" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/solicitudes16" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes16" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/solicitudes17" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes17" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/solicitudes18" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes18" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/solicitudes19" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes19" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/solicitudes2" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/solicitudes20" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes20" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/solicitudes21" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes21" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/solicitudes22" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes22" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/solicitudes23" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes23" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/solicitudes24" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes24" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/solicitudes25" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes25" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/solicitudes26" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes26" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/solicitudes27" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes27" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/solicitudes28" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes28" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/solicitudes29" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes29" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/solicitudes3" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/solicitudes30" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes30" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/solicitudes31" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes31" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/solicitudes32" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes32" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/solicitudes33" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes33" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/solicitudes34" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes34" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/solicitudes35" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes35" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/solicitudes36" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes36" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/solicitudes37" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes37" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/solicitudes38" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes38" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/solicitudes39" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes39" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/solicitudes4" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/solicitudes40" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes40" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/solicitudes41" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes41" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/solicitudes42" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes42" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/solicitudes43" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes43" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/solicitudes44" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes44" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/solicitudes45" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes45" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/solicitudes46" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes46" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/solicitudes47" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes47" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/solicitudes48" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes48" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/solicitudes49" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes49" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/solicitudes5" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/solicitudes50" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes50" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/solicitudes51" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes51" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/solicitudes52" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes52" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/solicitudes53" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes53" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/solicitudes54" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes54" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/solicitudes55" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes55" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/solicitudes56" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes56" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/solicitudes57" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes57" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/solicitudes58" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes58" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/solicitudes59" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes59" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/solicitudes6" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes6" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/solicitudes60" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes60" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/solicitudes61" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes61" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/solicitudes62" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes62" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/solicitudes63" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes63" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/solicitudes64" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes64" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/solicitudes65" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes65" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/solicitudes66" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes66" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/solicitudes67" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes67" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/solicitudes68" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes68" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/solicitudes69" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes69" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/solicitudes7" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes7" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/solicitudes70" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes70" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/solicitudes71" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes71" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/solicitudes72" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes72" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/solicitudes73" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes73" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/solicitudes74" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes74" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/solicitudes75" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes75" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/solicitudes76" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes76" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/solicitudes77" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes77" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/solicitudes78" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes78" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/solicitudes79" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes79" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/solicitudes8" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes8" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/solicitudes80" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes80" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/solicitudes81" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes81" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/solicitudes82" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes82" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/solicitudes83" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes83" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/solicitudes84" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes84" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/solicitudes85" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes85" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/solicitudes86" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes86" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/solicitudes87" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes87" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/solicitudes88" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes88" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/solicitudes89" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes89" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/solicitudes9" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes9" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/solicitudes90" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes90" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/solicitudes91" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes91" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/solicitudes92" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes92" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/solicitudes93" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes93" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/solicitudes94" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes94" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/solicitudes95" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes95" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/solicitudes96" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes96" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/solicitudes97" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes97" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/solicitudes98" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes98" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/solicitudes99" beforeDir="false" afterPath="$PROJECT_DIR$/data/solicitudes99" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/control/Aplicacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/control/Aplicacion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/control/FuentesComida.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/control/FuentesComida.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/control/Asignacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/control/Asignacion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/control/BuscarSlot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/control/BuscarSlot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/model/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/model/Graph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/model/Pair.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/model/Pair.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/model/Path.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/model/Path.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/model/QYPriorityQueue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/model/QYPriorityQueue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/model/VariableGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/model/VariableGraph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/model/Vertex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/model/Vertex.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/model/abstracts/BaseEdge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/model/abstracts/BaseEdge.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/model/abstracts/BaseElementWithWeight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/model/abstracts/BaseElementWithWeight.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/model/abstracts/BaseGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/model/abstracts/BaseGraph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/model/abstracts/BaseVertex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/model/abstracts/BaseVertex.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -141,7 +46,6 @@
   <component name="ProjectId" id="1PtNgFVezG1RVyulf6K8feL5Ctm" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
@@ -174,6 +78,7 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -193,13 +98,12 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="808" y="409" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1584471980524">
@@ -238,27 +142,6 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="300" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584484563674" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/control/Aplicacion.java</url>
-          <line>55</line>
-          <option name="timeStamp" value="159" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/control/Aplicacion.java</url>
-          <line>284</line>
-          <option name="timeStamp" value="162" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/control/Aplicacion.java</url>
-          <line>33</line>
-          <option name="timeStamp" value="166" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="masterDetails">
     <states>

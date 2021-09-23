@@ -1,6 +1,6 @@
 package edu.asu.emit.qyan.alg.control;
 
-public class Solicitud /*implements Comparable<Double>*/ {
+public class Solicitud {
 
     public int origen;
     public int destino;
@@ -21,9 +21,4 @@ public class Solicitud /*implements Comparable<Double>*/ {
     public double getFSfalso() {
         return FSfalso;
     }
-
-//    @Override
-//    public int compareTo(Double o) {
-//        return (this.FSfalso - o);
-//    }
 }

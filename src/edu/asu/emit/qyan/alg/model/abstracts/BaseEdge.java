@@ -36,10 +36,10 @@ package edu.asu.emit.qyan.alg.model.abstracts;
  * @version $Revision: 430 $
  * @date $Date: 2008-07-27 16:31:56 -0700 (Sun, 27 Jul 2008) $
  */
-public interface BaseEdge
-{
-	int get_weight();
-	
-	BaseVertex get_start_vertex();
-	BaseVertex get_end_vertex();
+public interface BaseEdge {
+    int get_weight();
+
+    BaseVertex get_start_vertex();
+
+    BaseVertex get_end_vertex();
 }
