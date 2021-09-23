@@ -36,9 +36,10 @@ package edu.asu.emit.qyan.alg.model.abstracts;
  * @version $Revision: 430 $
  * @date $Date: 2008-07-27 16:31:56 -0700 (Sun, 27 Jul 2008) $
  */
-public interface BaseVertex
-{
-	int get_id();
-	double get_weight();
-	void set_weight(double weight);
+public interface BaseVertex {
+    int get_id();
+
+    double get_weight();
+
+    void set_weight(double weight);
 }

@@ -1,7 +1,5 @@
 package edu.asu.emit.qyan.alg.control;
 
-import edu.asu.emit.qyan.alg.model.Path;
-
 import java.util.ArrayList;
 
 public class FuentesComida {
@@ -14,6 +12,7 @@ public class FuentesComida {
     public int fsUtilizados;
     public int modificado;
     public boolean borrar;
+    public int semiBloqueados;
 
     public FuentesComida(GrafoMatriz g) {
         this.grafo = g;
@@ -24,6 +23,7 @@ public class FuentesComida {
         this.modificado = 0;
         this.solicitudes = new ArrayList<>();
         this.borrar = false;
+        this.semiBloqueados = 0;
     }
 
 }

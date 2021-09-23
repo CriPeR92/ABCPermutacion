@@ -2,30 +2,32 @@ package edu.asu.emit.qyan.alg.control;
 
 public class FrecuenciaSlot {
 
-	public int libreOcupado;
-	public int id;
-	
-	public FrecuenciaSlot(int libreOcupado, int id) {
-		super();
-		this.libreOcupado = libreOcupado;
-		this.id = id;
-	}
+    public int libreOcupado;
+    public int id;
+    public int tiempo;
 
-	public int getLibreOcupado() {
-		return libreOcupado;
-	}
+    public FrecuenciaSlot(int libreOcupado, int id) {
+        super();
+        this.libreOcupado = libreOcupado;
+        this.id = id;
+        this.tiempo = tiempo;
+    }
 
-	public void setLibreOcupado(int libreOcupado) {
-		this.libreOcupado = libreOcupado;
-	}
+    public int getLibreOcupado() {
+        return libreOcupado;
+    }
 
-	public int getId() {
-		return id;
-	}
+    public void setLibreOcupado(int libreOcupado) {
+        this.libreOcupado = libreOcupado;
+    }
 
-	public void setId(int id) {
-		this.id = id;
-	} 
-	
-	
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+
 }

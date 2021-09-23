@@ -39,11 +39,12 @@ import java.util.Set;
  * @version $Revision: 430 $
  * @date $Date: 2008-07-27 16:31:56 -0700 (Sun, 27 Jul 2008) $
  */
-public interface BaseGraph
-{
-	List<BaseVertex> get_vertex_list();
-	
-	double get_edge_weight(BaseVertex source, BaseVertex sink);
-	Set<BaseVertex> get_adjacent_vertices(BaseVertex vertex);
-	Set<BaseVertex> get_precedent_vertices(BaseVertex vertex);
+public interface BaseGraph {
+    List<BaseVertex> get_vertex_list();
+
+    double get_edge_weight(BaseVertex source, BaseVertex sink);
+
+    Set<BaseVertex> get_adjacent_vertices(BaseVertex vertex);
+
+    Set<BaseVertex> get_precedent_vertices(BaseVertex vertex);
 }

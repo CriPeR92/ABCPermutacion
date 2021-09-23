@@ -35,7 +35,6 @@ package edu.asu.emit.qyan.alg.model.abstracts;
  * @version $Revision: 670 $
  * @latest $Id: BaseElementWithWeight.java 670 2009-02-05 08:08:15Z qyan $
  */
-public interface BaseElementWithWeight
-{
-	public double get_weight();
+public interface BaseElementWithWeight {
+    public double get_weight();
 }
