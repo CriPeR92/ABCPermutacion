@@ -3,19 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c3879f2f-7a88-4d06-a12e-f5e6386bd08b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/control/Aplicacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/control/Aplicacion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/control/Asignacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/control/Asignacion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/control/BuscarSlot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/control/BuscarSlot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/model/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/model/Graph.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/model/Pair.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/model/Pair.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/model/Path.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/model/Path.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/model/QYPriorityQueue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/model/QYPriorityQueue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/model/VariableGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/model/VariableGraph.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/model/Vertex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/model/Vertex.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/model/abstracts/BaseEdge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/model/abstracts/BaseEdge.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/model/abstracts/BaseElementWithWeight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/model/abstracts/BaseElementWithWeight.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/model/abstracts/BaseGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/model/abstracts/BaseGraph.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/model/abstracts/BaseVertex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/asu/emit/qyan/alg/model/abstracts/BaseVertex.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,10 +36,12 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1563225742749" />
     <property name="last.edited.regexp" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../AlgoritmoABCFirstFit" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../AlgoritmoAbejaBCO" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -104,44 +93,6 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="808" y="409" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1584471980524">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="808" y="409" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584471980524" />
-    <state width="1877" height="278" key="GridCell.Tab.0.bottom" timestamp="1584489318752">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="278" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584489318752" />
-    <state width="1877" height="278" key="GridCell.Tab.0.center" timestamp="1584489318752">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="278" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584489318752" />
-    <state width="1877" height="278" key="GridCell.Tab.0.left" timestamp="1584489318752">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="278" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584489318752" />
-    <state width="1877" height="278" key="GridCell.Tab.0.right" timestamp="1584489318752">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="278" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584489318752" />
-    <state width="1877" height="300" key="GridCell.Tab.1.bottom" timestamp="1584484563674">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="300" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584484563674" />
-    <state width="1877" height="300" key="GridCell.Tab.1.center" timestamp="1584484563674">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="300" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584484563674" />
-    <state width="1877" height="300" key="GridCell.Tab.1.left" timestamp="1584484563674">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="300" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584484563674" />
-    <state width="1877" height="300" key="GridCell.Tab.1.right" timestamp="1584484563674">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="300" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584484563674" />
   </component>
   <component name="masterDetails">
     <states>

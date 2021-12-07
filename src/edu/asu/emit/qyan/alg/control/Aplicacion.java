@@ -815,6 +815,7 @@ public class Aplicacion {
 
         int m, n, b = 0;
         float contadorEntropia = 0;
+        float contadorEntropiaFinal = 0;
         int empezoEn = 0;
 
         for (m = 0; m < fuentes.get(nroGrafo).grafo.grafo.length; m++) {
@@ -827,6 +828,9 @@ public class Aplicacion {
                             contadorEntropia++;
                         }
                     }
+                    contadorEntropia = contadorEntropia/200;
+                    contadorEntropiaFinal = contadorEntropiaFinal + contadorEntropia;
+                    contadorEntropia = 0;
                 }
             }
         }
@@ -835,7 +839,7 @@ public class Aplicacion {
          * Las metricas son:
          * - cantBloqueados
          * - indice
-         * - contadorEntropia
+         * - contadorEntropia / cantidad de enlaces
          * - semiBloqueados
          */
         float indice = (float) resultadoFinal.fsUtilizados / 200;
